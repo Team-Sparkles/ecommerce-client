@@ -1,2 +1,23 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+@import 'colors.scss';
+
+#header-nav {
+  background-color: $dark-grey;
+}
+
+#hero {
+  background-color: $standard-grey;
+}
+
+#marketplace {
+  background-color: $pure-white;
+}
+
+#shopping-cart {
+  background-color: $bold-grey;
+}
+
+#footer {
+  background-color: $pure-black;
+}
