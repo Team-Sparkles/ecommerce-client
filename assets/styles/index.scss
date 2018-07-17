@@ -1,2 +1,126 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+@import 'colors.scss';
+
+body {
+  background-color: $light-grey;
+}
+
+// MAIN SECTIONS
+
+#header-nav {
+  background-color: $dark-grey;
+  height: 50px;
+  width: 100%;
+}
+
+#hero {
+  background-color: $standard-grey;
+  height: 300px;
+  width: 100%;
+  float: left;
+}
+
+#sections {
+  background-color: $bold-grey;
+  width: 100%;
+  height: 40px;
+  float: left;
+}
+
+#marketplace {
+  background-color: $pure-white;
+  height: 700px;
+  width: 100%;
+  float: left;
+}
+
+#shopping-cart {
+  background-color: $bold-grey;
+  // width: 35%;
+  // height: 700px;
+  float: left;
+}
+
+#footer {
+  background-color: $pure-black;
+  height: 150px;
+  margin: 0 auto;
+  clear: both;
+}
+
+#body-container {
+  width: 90%;
+  @media only screen and (max-width: 700px) {
+    width: 100%;
+    }
+  margin: 0 auto;
+}
+
+// HEADER SECTIONS
+
+.header {
+  height: 50px;
+  border: 2px;
+  border-style: solid;
+  border-color: $pure-white;
+  display: block;
+  font-color: $light-grey;
+}
+
+#header-logo {
+  width: 150px;
+  float: left;
+}
+
+#header-announcer {
+  // DEPR
+  // width: 300px;
+  // float: left;
+}
+
+#header-user-options {
+  width: 300px;
+  float: right;
+}
+
+#header-checkout-icon {
+  width: 50px;
+  float: right;
+}
+
+#sign-out-button {
+
+}
+
+#sign-in-button {
+
+}
+
+#change-password-button {
+
+}
+
+#sign-out-button {
+
+}
+
+// HERO SECTIONS
+
+// SECTIONS SECTIONS
+
+// MARKETPLACE SECTIONS
+
+.item-tile {
+  width: 200px;
+  height: 300px;
+
+  padding: 20px;
+  margin: 20px;
+  border-color: $pure-black;
+  border-radius: 10px;
+  border-style: solid;
+
+  float: left;
+}

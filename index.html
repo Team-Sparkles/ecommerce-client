@@ -12,6 +12,185 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+
+      <!-- HEADER MAIN -->
+      <div id="header-nav">
+
+        <div id="header-logo" class="header">logo</div>
+        <!-- <div id="header-announcer" class="header">announcer</div> -->
+        <div id="header-checkout-icon" class="header">
+          <form class="form-inline justify-content-end">
+            <button id="shopping-cart-button" class="shopping-cart btn btn-outline-success" data-toggle="modal" data-target="#shoppingCartModal" type="button">
+              CART
+            </button>
+          </form>
+        </div>
+        <div id="header-user-options" class="header">
+          <form class="form-inline justify-content-end">
+              <button id="sign-out-button" class="sign-out hidden btn btn-outline-success" type="button">Sign Out</button>
+              <button id="change-password-button" class="change-password hidden btn btn-outline-success" data-toggle="modal" data-target="#changePasswordModal" type="button">Change Password</button>
+              <button id="sign-in-button" class="sign-in btn btn-outline-success" data-toggle="modal" data-target="#signInModal" type="button">Sign In</button>
+              <button id="sign-up-button" class="sign-up btn btn-outline-success" data-toggle="modal" data-target="#signUpModal" type="button">Sign Up</button>
+              <button id="see-orders-button" class="see-orders btn btn-outline-success" data-toggle="modal" data-target="#seeOrdersModal" type="button">My Orders</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- HERO MAIN -->
+      <div id="hero">
+
+      </div>
+
+      <div id="body-container">
+
+        <!-- SECTIONS MAIN -->
+        <div id="sections">
+
+        </div>
+
+        <!-- MARKETPLACE MAIN -->
+        <div id="marketplace">
+
+          <div id="item-1" class="item-tile"></div>
+          <div id="item-2" class="item-tile"></div>
+          <div id="item-3" class="item-tile"></div>
+          <div id="item-4" class="item-tile"></div>
+          <div id="item-5" class="item-tile"></div>
+          <div id="item-6" class="item-tile"></div>
+
+          </div>
+
+        </div>
+
+        <!-- SHOPPING CART MAIN -->
+        <div id="shopping-cart">
+
+        </div>
+
+        <!-- FOOTER MAIN -->
+        <div id="footer">
+
+        </div>
+      </div>
+
+<!-- CHANGE PASSWORD Modal -->
+              <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="change-password-form">
+                        <input name="passwords[old]" placeholder='Old Password' type='password' required/>
+                        <input name="passwords[new]" placeholder='New Password' type='password' required/>
+                      </form>
+                      <p class="auth-alert-modal"></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button class="btn" type="submit" form="change-password-form">Change Password</button>
+                      <p class="auth-alert"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+<!-- SIGN IN Modal -->
+              <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="signInModalLabel">Sign In</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="signin-form">
+                        <input name="credentials[email]" placeholder='Email' type='text' required/>
+                        <input name="credentials[password]" placeholder='Password' type='password' required/>
+                      <p class="auth-alert-modal"></p>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button class="btn" type="submit" form="signin-form">Sign In</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+<!-- SIGN UP Modal -->
+        <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="signup-form">
+                  <input name="credentials[email]" placeholder='Email' type='text' required/>
+                  <input name="credentials[password]" placeholder='Password' type='password' required/>
+                  <input name="credentials[password_confirmation]" placeholder='Password Confirmation' type='password' required/>
+                </form>
+                <p class="auth-alert-modal"></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button class="btn" type="submit" form="signup-form">Sign Up</button>
+                </div>
+            </div>
+          </div>
+        </div>
+
+<!-- SEE ORDERS Modal -->
+    <div class="modal fade" id="seeOrdersModal" tabindex="-1" role="dialog" aria-labelledby="seeOrdersModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="seeOrdersModalLabel">My Orders</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- HANDLEBARS CONTENT HERE -->
+            <p class="auth-alert-modal"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+<!-- SHOPPING CART ICON modal -->
+    <div class="modal fade" id="shoppingCartModal" tabindex="-1" role="dialog" aria-labelledby="shoppingCartModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="shoppingCartModalLabel">Shopping Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- HANDLEBARS CONTENT HERE -->
+            <p class="auth-alert-modal"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
     </body>
 </html>
