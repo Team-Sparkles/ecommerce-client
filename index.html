@@ -18,13 +18,20 @@
 
         <div id="header-logo" class="header">logo</div>
         <!-- <div id="header-announcer" class="header">announcer</div> -->
-        <div id="header-checkout-icon" class="header">icon</div>
+        <div id="header-checkout-icon" class="header">
+          <form class="form-inline justify-content-end">
+            <button id="shopping-cart-button" class="shopping-cart btn btn-outline-success" data-toggle="modal" data-target="#shoppingCartModal" type="button">
+              CART
+            </button>
+          </form>
+        </div>
         <div id="header-user-options" class="header">
           <form class="form-inline justify-content-end">
               <button id="sign-out-button" class="sign-out hidden btn btn-outline-success" type="button">Sign Out</button>
               <button id="change-password-button" class="change-password hidden btn btn-outline-success" data-toggle="modal" data-target="#changePasswordModal" type="button">Change Password</button>
               <button id="sign-in-button" class="sign-in btn btn-outline-success" data-toggle="modal" data-target="#signInModal" type="button">Sign In</button>
               <button id="sign-up-button" class="sign-up btn btn-outline-success" data-toggle="modal" data-target="#signUpModal" type="button">Sign Up</button>
+              <button id="see-orders-button" class="see-orders btn btn-outline-success" data-toggle="modal" data-target="#seeOrdersModal" type="button">My Orders</button>
           </form>
         </div>
       </div>
@@ -142,6 +149,48 @@
             </div>
           </div>
         </div>
+
+<!-- SEE ORDERS Modal -->
+    <div class="modal fade" id="seeOrdersModal" tabindex="-1" role="dialog" aria-labelledby="seeOrdersModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="seeOrdersModalLabel">My Orders</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- HANDLEBARS CONTENT HERE -->
+            <p class="auth-alert-modal"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+<!-- SHOPPING CART ICON modal -->
+    <div class="modal fade" id="shoppingCartModal" tabindex="-1" role="dialog" aria-labelledby="shoppingCartModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="shoppingCartModalLabel">Shopping Cart</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- HANDLEBARS CONTENT HERE -->
+            <p class="auth-alert-modal"></p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+      </div>
+    </div>
 
     </body>
 </html>
