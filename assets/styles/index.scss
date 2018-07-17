@@ -59,3 +59,49 @@ body {
 }
 
 // HEADER SECTIONS
+
+.header {
+  height: 50px;
+  border: 2px;
+  border-style: solid;
+  border-color: $pure-white;
+  display: block;
+  font-color: $light-grey;
+}
+
+#header-logo {
+  width: 150px;
+  float: left;
+}
+
+#header-announcer {
+  // DEPR
+  // width: 300px;
+  // float: left;
+}
+
+#header-user-options {
+  width: 300px;
+  float: right;
+}
+
+#header-checkout-icon {
+  width: 50px;
+  float: right;
+}
+
+#sign-out-button {
+
+}
+
+#sign-in-button {
+
+}
+
+#change-password-button {
+
+}
+
+#sign-out-button {
+
+}
