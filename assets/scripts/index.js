@@ -1,5 +1,5 @@
 'use strict'
-const handlebars = require('../styles/tile.handlebars')
+const handlebars = require('./tile.handlebars')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
