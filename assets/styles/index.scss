@@ -106,6 +106,20 @@ background-size: cover;
 #header-checkout-icon {
   width: 60px;
   float: right;
+  padding-left: 6px;
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+}
+
+#shopping-cart-button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background: none!important;
+  color: inherit;
+  border: none;
+  padding: 0!important;
+  font: inherit;
+  cursor: pointer;
 }
 
 #sign-out-button {
