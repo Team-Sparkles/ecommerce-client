@@ -1,0 +1,20 @@
+{{#each items as |item|}}
+
+<div data-id="{{item.id}}" class="item-tile">
+  <!-- <div class="item-image"></div> DEPR -->
+  <div class="item-text">
+    <h2>{{item.name}}</h2>
+    <h3>$ {{item.price}}</h3>
+    <div class="tile-bar"></div>
+  </div>
+  <div class="item-cart-options">
+        <form class="tile-cart">
+          <h4>
+            <input class="qty-field" type="number" name="quantity" min="1" max="20" placeholder="qty">
+            | <button class="tile-cart-button">Add to Cart</button>
+          </h4>
+        </form>
+    </div>
+  </div>
+
+{{/each}}
