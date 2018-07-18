@@ -31,11 +31,18 @@ background-attachment: fixed;
 background-size: contain !important;
 @media only screen and (max-width: 996px) {
   background-image: url("https://i.imgur.com/5O7JmH9.png");
+  background-size: contain !important;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  width: 100%;
+    @media only screen and (max-width: 715px) {
+      background-image: url("https://i.imgur.com/5O7JmH9.png");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover !important;
+      resize: vertical;
+      }
+    }
   }
-}
 
 #sections {
   background-color: $primeblue-light;
@@ -322,11 +329,24 @@ background-size: contain !important;
 
 // SECTIONS SECTIONS
 
+.alert-text {
+  pointer-events: none;
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  margin-top: 45px;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+  .section-text a:hover {
+    color: $tan-light;
+  }
+}
+
 .section-text {
   height: 100px;
   width: 100%;
-  position: relative;
-  top: 5;
+  margin-top: 10px;
   text-align: right;
   padding: 10px;
   .section-text a:hover {
