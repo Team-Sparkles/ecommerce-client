@@ -1,5 +1,6 @@
 'use strict'
-const handlebars = require('./tile.handlebars')
+const tileEvents = require('./events')
+const authEvents = require('./auth/auth-events')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
@@ -7,10 +8,10 @@ const handlebars = require('./tile.handlebars')
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
-const authEvents = require('./auth/auth-events')
 $(() => {
-const showTilesHtml = handlebars({ items: data.items })
-  // $('#marketplace').html('')
-  $('#marketplace').append(showTilesHtml)
-  authEvents.addHandlers()
+  // $('#marketplace').on('load', tileEvents.getTiles)
+  $(document).ready(function () {
+    console.log('document loaded')
+    tileEvents.getTiles()
+})
 })

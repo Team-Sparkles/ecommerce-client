@@ -1,5 +1,16 @@
 'use strict'
 
+const handlebars = require('./tile.handlebars')
+
+const getTilesSuccess = function (data) {
+  const showTilesHtml = handlebars({ items: data.items })
+  $('#marketplace').html('')
+  $('#marketplace').html(showTilesHtml)
+}
+// const getTilesError = function (error) {
+//   $('#display').html('Tiles retrieval unsuccessful', error)
+// }
+
 // // display a message to the user
 // const showMessage = function (message) {
 //   $('#message').html(message)
@@ -34,5 +45,7 @@ module.exports = {
   // showMessage: showMessage,
   // clearMessage: clearMessage,
   showAlert: showAlert,
-  clearAlerts: clearAlerts
+  clearAlerts: clearAlerts,
+  getTilesSuccess: getTilesSuccess
+  // getTilesError: getTilesError
 }
