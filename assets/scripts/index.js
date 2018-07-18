@@ -9,7 +9,7 @@ const authEvents = require('./auth/auth-events')
 // require('./example')
 
 $(() => {
-  // $('#marketplace').on('load', tileEvents.getTiles)
+  authEvents.addHandlers()
   $(document).ready(function () {
     console.log('document loaded')
     tileEvents.getTiles()
