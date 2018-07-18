@@ -113,7 +113,7 @@ background-size: cover;
 }
 
 #shopping-cart-button {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  // box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   background: none!important;
   color: inherit;
   border: none;
@@ -353,6 +353,7 @@ h3 {
   border-style: solid;
   float: left;
   position: relative;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .item-image {
@@ -396,6 +397,52 @@ h3 {
   height: auto;
   margin: 0 auto;
   padding-right: 10px;
+}
+
+.tile-cart {
+  display: inline-flex;
+  height: 25px;
+  float: right;
+}
+
+.tile-cart-button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: inline-flex;
+  position: relative;
+  bottom: 10px;
+  border-radius: 4px;
+  background-color: $accentpurple-medium;
+  border: none;
+  color: $tan-light;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 10px;
+  height: 25px;
+}
+.tile-cart-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.tile-cart-button span::after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.tile-cart-button:hover span {
+  padding-right: 25px;
+}
+.tile-cart-button:hover span::after {
+  opacity: 1;
+  right: 0;
 }
 
 .tile-bar {
