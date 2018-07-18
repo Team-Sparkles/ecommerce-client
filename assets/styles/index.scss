@@ -330,8 +330,8 @@ background-size: contain !important;
 // SECTIONS SECTIONS
 
 .alert-text {
-  pointer-events: none;
-  height: 100px;
+  // pointer-events: none;
+  height: auto;
   width: 100%;
   position: absolute;
   margin-top: 45px;
