@@ -1,9 +1,10 @@
 'use strict'
+const config = require('./config')
 
 const getTilesSubmit = function () {
   return $.ajax({
     method: 'GET',
-    url: 'http://localhost:4741/items',
+    url: config.apiUrl + '/items',
     headers: {
       contentType: 'application/json'
     }
