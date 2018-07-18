@@ -7,7 +7,6 @@ const getTilesSubmit = function () {
     headers: {
       contentType: 'application/json'
     }
-    // data: data
   })
 }
 

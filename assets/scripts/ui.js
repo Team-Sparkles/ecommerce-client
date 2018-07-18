@@ -7,9 +7,10 @@ const getTilesSuccess = function (data) {
   $('#marketplace').html('')
   $('#marketplace').html(showTilesHtml)
 }
-// const getTilesError = function (error) {
-//   $('#display').html('Tiles retrieval unsuccessful', error)
-// }
+const getTilesError = function (error) {
+  // $('#display').html('Tiles retrieval unsuccessful', error)
+  console.log('GET error is ', error)
+}
 
 // // display a message to the user
 // const showMessage = function (message) {
@@ -46,6 +47,6 @@ module.exports = {
   // clearMessage: clearMessage,
   showAlert: showAlert,
   clearAlerts: clearAlerts,
-  getTilesSuccess: getTilesSuccess
-  // getTilesError: getTilesError
+  getTilesSuccess: getTilesSuccess,
+  getTilesError: getTilesError
 }

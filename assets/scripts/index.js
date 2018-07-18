@@ -13,5 +13,5 @@ $(() => {
   $(document).ready(function () {
     console.log('document loaded')
     tileEvents.getTiles()
-})
+  })
 })
