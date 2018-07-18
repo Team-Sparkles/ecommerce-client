@@ -1,6 +1,7 @@
 'use strict'
 // require dependencies
 const ui = require('../ui')
+const cartItemsHandlebars = require('../templates/cart-items.handlebars')
 // const store = require('../store')
 
 const getOrdersError = function (error) {
@@ -45,7 +46,15 @@ const updateOrderSuccess = function (response) {
 }
 
 const createOrderSuccess = function (response) {
-  console.log('Response from createOrderSuccess is: ', response)
+  console.log('response.order from createOrderSuccess is: ', response.order)
+  $('#orderId').html(response.order._id)
+  if (response.order.items.length > 0) {
+    const cartItemsHtml = cartItemsHandlebars({ items: response.order.items })
+    $('#cart-items').html('')
+    $('#cart-items').html(cartItemsHtml)
+  } else {
+    $('#cart-items').html('You have nothing in your cart.')
+  }
 }
 
 module.exports = {
