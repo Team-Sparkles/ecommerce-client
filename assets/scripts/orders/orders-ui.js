@@ -4,8 +4,8 @@ const ui = require('../ui')
 const cartItemsHandlebars = require('../templates/cart-items.handlebars')
 // const store = require('../store')
 
-const getOrdersError = function (error) {
-  console.log('Error from getOrdersError is: ', error)
+const showOrdersError = function (error) {
+  console.log('Error from showOrdersError is: ', error)
   ui.showAlert('danger', 'Warning!', 'Failed to load orders from database', 3000)
 }
 
@@ -14,8 +14,8 @@ const createOrderError = function (error) {
   ui.showAlert('danger', 'Warning!', 'Failed to create new order in database', 3000)
 }
 
-const getOrderError = function (error) {
-  console.log('Error from getOrderError is: ', error)
+const showOrderError = function (error) {
+  console.log('Error from showOrderError is: ', error)
   ui.showAlert('danger', 'Warning!', 'Failed to load order from database', 3000)
 }
 
@@ -29,12 +29,12 @@ const updateOrderError = function (error) {
   ui.showAlert('danger', 'Warning!', 'Failed to update order in database', 3000)
 }
 
-const getOrdersSuccess = function (response) {
-  console.log('Response from getOrdersError is: ', response)
+const showOrdersSuccess = function (response) {
+  console.log('Response from showOrdersError is: ', response)
 }
 
-const getOrderSuccess = function (response) {
-  console.log('Response from getOrderSuccess is: ', response)
+const showOrderSuccess = function (response) {
+  console.log('Response from showOrderSuccess is: ', response)
 }
 
 const deleteOrderSuccess = function (response) {
@@ -46,15 +46,6 @@ const updateOrderSuccess = function (response) {
 }
 
 const createOrderSuccess = function (response) {
-  // console.log('response.order from createOrderSuccess is: ', response.order)
-  // $('#orderId').html(response.order._id)
-  // if (response.order.items.length > 0) {
-  //   const cartItemsHtml = cartItemsHandlebars({ items: response.order.items })
-  //   $('#cart-items').html('')
-  //   $('#cart-items').html(cartItemsHtml)
-  // } else {
-  //   $('#cart-items').html('You have nothing in your cart.')
-  // }
   updateCartDetails(response.order)
 }
 
@@ -71,14 +62,15 @@ const updateCartDetails = function (order) {
 }
 
 module.exports = {
-  getOrdersError: getOrdersError,
-  getOrdersSuccess: getOrdersSuccess,
-  getOrderError: getOrderError,
-  getOrderSuccess: getOrderSuccess,
+  showOrdersError: showOrdersError,
+  showOrdersSuccess: showOrdersSuccess,
+  showOrderError: showOrderError,
+  showOrderSuccess: showOrderSuccess,
   deleteOrderError: deleteOrderError,
   deleteOrderSuccess: deleteOrderSuccess,
   updateOrderError: updateOrderError,
   updateOrderSuccess: updateOrderSuccess,
   createOrderError: createOrderError,
-  createOrderSuccess: createOrderSuccess
+  createOrderSuccess: createOrderSuccess,
+  updateCartDetails: updateCartDetails
 }

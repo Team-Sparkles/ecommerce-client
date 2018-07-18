@@ -29,18 +29,24 @@ const showOrders = function () {
 const showOrder = function (id) {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + `/orders/:${id}`
+    url: config.apiUrl + `/orders/${id}`,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
 // UPDATE - make a call to server to update an order
-const updateOrder = function (data) {
+const updateOrder = function (id, data) {
+  console.log('data inside of updateOrder function is ', data)
+  console.log('id inside of updateOrder function is ', id)
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + `/orders/:${data.id}`,
+    url: config.apiUrl + `/orders/${id}`,
     data: data,
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Token token=' + store.user.token,
+      ContentType: 'application/json'
     }
   })
 }

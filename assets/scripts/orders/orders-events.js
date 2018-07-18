@@ -26,7 +26,44 @@ const onCreateOrder = function () {
 const addItemToOrder = function () {
   const itemId = $(this).attr('data-id')
   console.log('itemId is: ', itemId)
+  const orderId = $('#orderId').html()
+  console.log('order id is: ', orderId)
+  ordersApi.showOrder(orderId)
+    .then((response) => {
+      // const order = response.order
+      console.log('response.order is ', response.order)
+      console.log('response.order.items is ', response.order.items)
+      console.log('response.order.items[0] is: ', response.order.items[0])
+      if (response.order.items[0]) {
+        console.log('response.order.items[0]._id is: ', response.order.items[0]._id)
+      }
+      console.log('typeof response.order.items is: ', typeof response.order.items)
+      let itemsIdsOnlyArray = []
+      response.order.items.forEach((item) => {
+        itemsIdsOnlyArray.push(item._id)
+      })
+      console.log('updated items array w/o extra details : ', itemsIdsOnlyArray)
+      itemsIdsOnlyArray.push(itemId)
+      console.log('updated item list is: ', itemsIdsOnlyArray)
+      const data = {
+        order: {
+          items: itemsIdsOnlyArray,
+          checkoutComplete: false
+        }
+      }
+      console.log('updated response about to be saved is: ', data)
+      ordersApi.updateOrder(orderId, data)
+        .then((response) => {
+          console.log('succeeded at updating record, about to show record')
+          return response
+        })
+        .then(() => ordersApi.showOrder(orderId))
+        .then(response => ordersUi.updateCartDetails(response.order))
+        .catch(error => console.error)
+    })
+    .catch(ordersUi.showOrderError)
   // get this one order from db
+
   // push this itemID onto item array of order data
   // update order with new data
   // run update success function
