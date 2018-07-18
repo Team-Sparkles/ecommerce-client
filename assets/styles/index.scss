@@ -100,7 +100,7 @@ background-size: contain !important;
 }
 
 #header-user-options {
-  width: 400px;
+  width: auto;
   float: right;
   text-align: right;
   vertical-align: center;
@@ -214,7 +214,7 @@ background-size: contain !important;
   text-align: center;
   font-size: 16px;
   padding: 5px;
-  width: 100px;
+  width: auto;
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
@@ -351,7 +351,7 @@ h3 {
 
 .item-tile {
   width: 250px;
-  height: 300px;
+  height: 150px; // 300 for below DEPR with images
   margin: 20px;
   border-color: $primeblue-soft;
   background-color: $primeblue-light;
@@ -364,8 +364,8 @@ h3 {
 
 .item-image {
   position: relative;
-  height: 150px;
-  width: 100%;
+  // height: 150px; DEPR - re-add for images
+  // width: 100%;
   object-fit: fill;
 }
 
@@ -373,7 +373,7 @@ h3 {
   height: 100px;
   width: 100%;
   position: absolute;
-  top: 135px;
+  top: 10px; // **135px with images**
   text-align: right;
   padding: 10px;
 }
@@ -400,7 +400,7 @@ h3 {
   border-top: 1px;
   border-top-style: solid;
   border-top-color: $tan-medium;
-  height: auto;
+  height: 30px; // DEPRECIATED DEPR - auto with qty
   margin: 0 auto;
   padding-right: 10px;
 }
