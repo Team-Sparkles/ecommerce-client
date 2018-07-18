@@ -5,6 +5,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 body {
   background-color: $light-grey;
+  font-family: 'Avenir', Helvetica, sans-serif;
 }
 
 // MAIN SECTIONS
@@ -16,13 +17,18 @@ body {
   top: 0;
   height: 50px;
   width: 100%;
+  z-index: 999;
 }
 
 #hero {
-  background-color: $standard-grey;
+  // background-color: $standard-grey;
   height: 300px;
   width: 100%;
   float: left;
+background-image: url("https://i.imgur.com/w0ZQY0W.png");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: contain;
 }
 
 #sections {
@@ -70,7 +76,6 @@ body {
   border-style: solid;
   border-color: $pure-white;
   display: block;
-  font-color: $light-grey;
 }
 
 #header-logo {
@@ -119,34 +124,37 @@ body {
 .item-tile {
   width: 250px;
   height: 300px;
-
-  padding: 20px;
   margin: 20px;
-  border-color: $pure-black;
-  border-radius: 10px;
+  border-color: $standard-grey;
+  border-radius: 5px;
   border-style: solid;
-
   float: left;
+  position: relative;
 }
 
 .item-text {
   height: 100px;
   text-indent: 50px;
   text-align: right;
-  right: 0px;
+  padding: 10px;
 }
 
 .item-cart-options {
-  text-align: center;
+  text-align: right;
+  padding: 2px;
   background-color: $light-grey;
-  height: 70px;
-  padding: 10px 0;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
 }
 
 .tile-bar {
-  margin: 5px;
-  height: 1px;
+  // margin: 5px;
+  height: 0px;
   width: 90%;
-  border-style: solid;
+  border-style: groove;
   border-color: $bold-grey;
+  position: absolute;
+  bottom: 55px;
 }
