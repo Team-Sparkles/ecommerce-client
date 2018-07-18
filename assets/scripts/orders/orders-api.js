@@ -10,7 +10,8 @@ const createOrder = function (data) {
     method: 'POST',
     url: config.apiUrl + '/orders',
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Token token=' + store.user.token,
+      ContentType: 'application/json'
     },
     data: data
   })

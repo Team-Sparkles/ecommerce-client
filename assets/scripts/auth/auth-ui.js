@@ -2,6 +2,7 @@
 // require dependencies
 const ui = require('../ui')
 const store = require('../store')
+const ordersEvents = require('../orders/orders-events.js')
 
 // run on sign up error
 const signUpError = function (error) {
@@ -14,6 +15,7 @@ const signUpError = function (error) {
 const signInSuccess = function (response) {
   // store data retricved from server
   store.user = response.user
+
   // change which auth options are available
   $('.sign-up').addClass('hidden')
   $('.sign-in').addClass('hidden')
@@ -25,6 +27,7 @@ const signInSuccess = function (response) {
   clearAuthForms()
   $('#signInModal').modal('hide')
   $('#signUpModal').modal('hide')
+  ordersEvents.onCreateOrder()
 }
 
 // run on sign-in error
