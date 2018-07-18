@@ -27,8 +27,8 @@ body {
   float: left;
 background-image: url("https://i.imgur.com/zfjNma5.png");
 background-repeat: no-repeat;
-background-attachment: scroll;
-background-size: cover;
+background-attachment: fixed;
+background-size: contain !important;
 }
 
 #sections {
