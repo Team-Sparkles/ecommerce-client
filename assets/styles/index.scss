@@ -1,23 +1,462 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
 @import 'colors.scss';
 
+body {
+  background-color: $light-grey;
+  font-family: 'Avenir', Helvetica, sans-serif;
+}
+
+// MAIN SECTIONS
+
 #header-nav {
-  background-color: $dark-grey;
+  background-color: $primeblue-dark;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 999;
 }
 
 #hero {
-  background-color: $standard-grey;
+  // background-color: $standard-grey;
+  height: 300px;
+  width: 100%;
+  float: left;
+background-image: url("https://i.imgur.com/zfjNma5.png");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: contain !important;
+@media only screen and (max-width: 996px) {
+  background-image: url("https://i.imgur.com/5O7JmH9.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  }
+}
+
+#sections {
+  background-color: $primeblue-light;
+  width: 100%;
+  height: 80px;
+  float: left;
 }
 
 #marketplace {
-  background-color: $pure-white;
+  background-color: $tan-light;
+  height: auto;
+  padding: 20px;
+  width: 100%;
+  float: left;
 }
 
 #shopping-cart {
   background-color: $bold-grey;
+  // width: 35%;
+  // height: 700px;
+  float: left;
 }
 
 #footer {
-  background-color: $pure-black;
+  background-color: $primeblue-heavy;
+  height: 150px;
+  margin: 0 auto;
+  clear: both;
+}
+
+#body-container {
+  width: 90%;
+  @media only screen and (max-width: 700px) {
+    width: 100%;
+    }
+  margin: 0 auto;
+}
+
+// HEADER SECTIONS
+
+.header {
+  height: 50px;
+  display: block;
+}
+
+#header-logo {
+  width: 175px;
+  float: left;
+}
+
+.nozama-logo {
+  padding: 2px;
+  position: relative;
+     top: 50%;
+     transform: perspective(1px) translateY(-50%);
+}
+
+#header-announcer {
+  // DEPRICIATED
+  // width: 300px;
+  // float: left;
+}
+
+#header-user-options {
+  width: auto;
+  float: right;
+  text-align: right;
+  vertical-align: center;
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+}
+
+#header-checkout-icon {
+  width: 60px;
+  float: right;
+  padding-left: 6px;
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
+}
+
+#shopping-cart-button {
+  // box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background: none!important;
+  color: inherit;
+  border: none;
+  padding: 0!important;
+  font: inherit;
+  cursor: pointer;
+}
+
+#sign-out-button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: inline-block;
+  border-radius: 4px;
+  background-color: $accentpurple-medium;
+  border: none;
+  color: $tan-light;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height: 30px;
+}
+#sign-out-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#sign-out-button span::after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+#sign-out-button:hover span {
+  padding-right: 25px;
+}
+#sign-out-button:hover span::after {
+  opacity: 1;
+  right: 0;
+}
+
+#sign-in-button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: inline-block;
+  border-radius: 4px;
+  background-color: $accentpurple-medium;
+  border: none;
+  color: $tan-light;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height: 30px;
+}
+#sign-in-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#sign-in-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+#sign-in-button:hover span {
+  padding-right: 25px;
+}
+#sign-in-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#change-password-button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: inline-block;
+  border-radius: 4px;
+  background-color: $accentpurple-medium;
+  border: none;
+  color: $tan-light;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  width: auto;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height: 30px;
+}
+#change-password-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#change-password-button span::after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+#change-password-button:hover span {
+  padding-right: 25px;
+}
+#change-password-button:hover span::after {
+  opacity: 1;
+  right: 0;
+}
+
+#sign-up-button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: inline-block;
+  border-radius: 4px;
+  background-color: $accentpurple-medium;
+  border: none;
+  color: $tan-light;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height: 30px;
+}
+#sign-up-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#sign-up-button span::after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+#sign-up-button:hover span {
+  padding-right: 25px;
+}
+#sign-up-button:hover span::after {
+  opacity: 1;
+  right: 0;
+}
+
+#see-orders-button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: inline-block;
+  border-radius: 4px;
+  background-color: $accentpurple-medium;
+  border: none;
+  color: $tan-light;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height: 30px;
+}
+#see-orders-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#see-orders-button span::after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+#see-orders-button:hover span {
+  padding-right: 25px;
+}
+#see-orders-button:hover span::after {
+  opacity: 1;
+  right: 0;
+}
+
+// HERO SECTIONS
+
+// SECTIONS SECTIONS
+
+.section-text {
+  height: 100px;
+  width: 100%;
+  position: relative;
+  top: 5;
+  text-align: right;
+  padding: 10px;
+  .section-text a:hover {
+    color: $tan-light;
+  }
+}
+
+.section-text,
+h2 {
+  font-size: 27px;
+  color: $primeblue-medium;
+  text-align: center;
+}
+
+.section-text,
+h3 {
+  font-size: 16px;
+  color: $primeblue-medium;
+}
+
+// MARKETPLACE SECTIONS
+
+.item-tile {
+  width: 250px;
+  height: 150px; // 300 for below DEPR with images
+  margin: 20px;
+  border-color: $primeblue-soft;
+  background-color: $primeblue-light;
+  border-radius: 5px;
+  border-style: solid;
+  float: left;
+  position: relative;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.item-image {
+  position: relative;
+  // height: 150px; DEPR - re-add for images
+  // width: 100%;
+  object-fit: fill;
+}
+
+.item-text {
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 10px; // **135px with images**
+  text-align: right;
+  padding: 10px;
+}
+
+.item-text, h2 {
+  font-size: 25px;
+  color: $pure-black;
+  padding-right: 5px;
+}
+
+.item-text, h3 {
+  font-size: 16px;
+  color: $dark-grey;
+  padding-right: 5px;
+}
+
+.item-cart-options {
+  text-align: right;
+  padding: 2px;
+  background-color: $light-grey;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px;
+  border-top-style: solid;
+  border-top-color: $tan-medium;
+  height: 30px; // DEPRECIATED DEPR - auto with qty
+  margin: 0 auto;
+  padding-right: 10px;
+}
+
+.tile-cart {
+  display: inline-flex;
+  height: 25px;
+  float: right;
+}
+
+.tile-cart-button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: inline-flex;
+  position: relative;
+  bottom: 10px;
+  border-radius: 4px;
+  background-color: $accentpurple-medium;
+  border: none;
+  color: $tan-light;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 10px;
+  height: 25px;
+}
+.tile-cart-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.tile-cart-button span::after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.tile-cart-button:hover span {
+  padding-right: 25px;
+}
+.tile-cart-button:hover span::after {
+  opacity: 1;
+  right: 0;
+}
+
+.tile-bar {
+  height: 1px;
+  width: 75%;
+  margin: 0 auto;
+  border-style: groove;
+  border-color: $light-grey;
+  position: absolute;
+  bottom: 37px;
 }
