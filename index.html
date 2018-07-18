@@ -16,67 +16,274 @@
       <!-- HEADER MAIN -->
       <div id="header-nav">
 
-        <div id="header-logo" class="header">logo</div>
+        <div id="header-logo" class="header"><img src="https://i.imgur.com/pneYOQE.gif" width="160" class="nozama-logo"></div>
         <!-- <div id="header-announcer" class="header">announcer</div> -->
         <div id="header-checkout-icon" class="header">
           <form class="form-inline justify-content-end">
-            <button id="shopping-cart-button" class="shopping-cart hidden btn btn-outline-success" data-toggle="modal" data-target="#shoppingCartModal" type="button">
-              CART
+            <button id="shopping-cart-button" class="shopping-cart btn hidden btn-outline-success" data-toggle="modal" data-target="#shoppingCartModal" type="button">
+              <img src="https://i.imgur.com/lLsFMPG.gif" width="45">
             </button>
           </form>
         </div>
         <div id="header-user-options" class="header">
           <form class="form-inline justify-content-end">
-              <button id="sign-out-button" class="sign-out hidden btn btn-outline-success" type="button">Sign Out</button>
-              <button id="change-password-button" class="change-password hidden btn btn-outline-success" data-toggle="modal" data-target="#changePasswordModal" type="button">Change Password</button>
-              <button id="sign-in-button" class="sign-in btn btn-outline-success" data-toggle="modal" data-target="#signInModal" type="button">Sign In</button>
-              <button id="sign-up-button" class="sign-up btn btn-outline-success" data-toggle="modal" data-target="#signUpModal" type="button">Sign Up</button>
-              <button id="see-orders-button" class="see-orders hidden btn btn-outline-success" data-toggle="modal" data-target="#seeOrdersModal" type="button">My Orders</button>
+              <button id="sign-out-button" class="sign-out hidden btn btn-outline-success" type="button"><span>Sign Out</span></button>
+              <button id="change-password-button" class="change-password hidden btn btn-outline-success" data-toggle="modal" data-target="#changePasswordModal" type="button"><span>Change Password</span></button>
+              <button id="sign-in-button" class="sign-in btn btn-outline-success" data-toggle="modal" data-target="#signInModal" type="button"><span>Sign In</span></button>
+              <button id="sign-up-button" class="sign-up btn btn-outline-success" data-toggle="modal" data-target="#signUpModal" type="button"><span>Sign Up</span></button>
+              <button id="see-orders-button" class="see-orders hidden btn btn-outline-success" data-toggle="modal" data-target="#seeOrdersModal" type="button"><span>My Orders</span></button>
           </form>
         </div>
       </div>
 
       <!-- HERO MAIN -->
       <div id="hero">
-
+        <img src="https://i.imgur.com/ZHz0OeX.gif" width="400" alt="Nozamalogo">
       </div>
-
-      <div id="body-container">
-
-
 
         <!-- SECTIONS MAIN -->
         <div id="sections">
-          <div id="alert-zone">
-
+          <div id="alert-zone"></div>
+          <div class="section-text">
+            <h2><a href="null">Link</a> | <a href="null">Link</a> | <a href="null">Link</a> | <a href="null">Link</a> | <a href="null">Link</a></h2>
           </div>
         </div>
+
+      <div id="body-container">
 
         <!-- MARKETPLACE MAIN -->
         <div id="marketplace">
 
           <div id="item-1" class="item-tile">
-            <!-- <div class="item-image"></div> DEPR -->
+            <div class="item-image"><img class="item-image" src="https://i.imgur.com/k6krfm0.png" alt="sample"></div>
+            <!-- <div class="tile-bar"></div> -->
             <div class="item-text">
               <h2>Item Name</h2>
               <h3>Item Price</h3>
-              <div class="tile-bar"></div>
             </div>
             <div class="item-cart-options">
                 <form class="tile-cart">
-                  <h4>
-                    <input class="qty-field" type="number" name="quantity" min="1" max="20" placeholder="qty">
-                    | <button class="tile-cart-button">Add to Cart</button>
+                    <select class="quantity-tab">
+                      <option value="1" selected="selected">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select><h4><button class="tile-cart-button">Add to Cart</button>
                   </h4>
                 </form>
             </div>
           </div>
 
-          <div id="item-2" class="item-tile"></div>
-          <div id="item-3" class="item-tile"></div>
-          <div id="item-4" class="item-tile"></div>
-          <div id="item-5" class="item-tile"></div>
-          <div id="item-6" class="item-tile"></div>
+          <div id="item-1" class="item-tile">
+            <div class="item-image"><img class="item-image" src="https://i.imgur.com/k6krfm0.png" alt="sample"></div>
+            <!-- <div class="tile-bar"></div> -->
+            <div class="item-text">
+              <h2>Item Name</h2>
+              <h3>Item Price</h3>
+            </div>
+            <div class="item-cart-options">
+                <form class="tile-cart">
+                    <select class="quantity-tab">
+                      <option value="1" selected="selected">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select><h4><button class="tile-cart-button">Add to Cart</button>
+                  </h4>
+                </form>
+            </div>
+          </div>
+
+          <div id="item-2" class="item-tile">
+            <div class="item-image"><img class="item-image" src="https://i.imgur.com/k6krfm0.png" alt="sample"></div>
+            <!-- <div class="tile-bar"></div> -->
+            <div class="item-text">
+              <h2>Item Name</h2>
+              <h3>Item Price</h3>
+            </div>
+            <div class="item-cart-options">
+                <form class="tile-cart">
+                    <select class="quantity-tab">
+                      <option value="1" selected="selected">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select><h4><button class="tile-cart-button">Add to Cart</button>
+                  </h4>
+                </form>
+            </div>
+          </div>
+
+          <div id="item-3" class="item-tile">
+            <div class="item-image"><img class="item-image" src="https://i.imgur.com/k6krfm0.png" alt="sample"></div>
+            <!-- <div class="tile-bar"></div> -->
+            <div class="item-text">
+              <h2>Item Name</h2>
+              <h3>Item Price</h3>
+            </div>
+            <div class="item-cart-options">
+                <form class="tile-cart">
+                    <select class="quantity-tab">
+                      <option value="1" selected="selected">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select><h4><button class="tile-cart-button">Add to Cart</button>
+                  </h4>
+                </form>
+            </div>
+          </div>
+
+          <div id="item-4" class="item-tile">
+            <div class="item-image"><img class="item-image" src="https://i.imgur.com/k6krfm0.png" alt="sample"></div>
+            <!-- <div class="tile-bar"></div> -->
+            <div class="item-text">
+              <h2>Item Name</h2>
+              <h3>Item Price</h3>
+            </div>
+            <div class="item-cart-options">
+                <form class="tile-cart">
+                    <select class="quantity-tab">
+                      <option value="1" selected="selected">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select><h4><button class="tile-cart-button">Add to Cart</button>
+                  </h4>
+                </form>
+            </div>
+          </div>
+
+          <div id="item-5" class="item-tile">
+            <div class="item-image"><img class="item-image" src="https://i.imgur.com/k6krfm0.png" alt="sample"></div>
+            <!-- <div class="tile-bar"></div> -->
+            <div class="item-text">
+              <h2>Item Name</h2>
+              <h3>Item Price</h3>
+            </div>
+            <div class="item-cart-options">
+                <form class="tile-cart">
+                    <select class="quantity-tab">
+                      <option value="1" selected="selected">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select><h4><button class="tile-cart-button">Add to Cart</button>
+                  </h4>
+                </form>
+            </div>
+          </div>
+
+          <div id="item-6" class="item-tile">
+            <div class="item-image"><img class="item-image" src="https://i.imgur.com/k6krfm0.png" alt="sample"></div>
+            <!-- <div class="tile-bar"></div> -->
+            <div class="item-text">
+              <h2>Item Name</h2>
+              <h3>Item Price</h3>
+            </div>
+            <div class="item-cart-options">
+                <form class="tile-cart">
+                    <select class="quantity-tab">
+                      <option value="1" selected="selected">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select><h4><button class="tile-cart-button">Add to Cart</button>
+                  </h4>
+                </form>
+            </div>
+          </div>
+
+          <div id="item-7" class="item-tile">
+            <div class="item-image"><img class="item-image" src="https://i.imgur.com/k6krfm0.png" alt="sample"></div>
+            <!-- <div class="tile-bar"></div> -->
+            <div class="item-text">
+              <h2>Item Name</h2>
+              <h3>Item Price</h3>
+            </div>
+            <div class="item-cart-options">
+                <form class="tile-cart">
+                    <select class="quantity-tab">
+                      <option value="1" selected="selected">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select><h4><button class="tile-cart-button">Add to Cart</button>
+                  </h4>
+                </form>
+            </div>
+          </div>
+
+          <div id="item-8" class="item-tile">
+            <div class="item-image"><img class="item-image" src="https://i.imgur.com/k6krfm0.png" alt="sample"></div>
+            <!-- <div class="tile-bar"></div> -->
+            <div class="item-text">
+              <h2>Item Name</h2>
+              <h3>Item Price</h3>
+            </div>
+            <div class="item-cart-options">
+                <form class="tile-cart">
+                    <select class="quantity-tab">
+                      <option value="1" selected="selected">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select><h4><button class="tile-cart-button">Add to Cart</button>
+                  </h4>
+                </form>
+            </div>
+          </div>
+
+          <div id="item-9" class="item-tile">
+            <div class="item-image"><img class="item-image" src="https://i.imgur.com/k6krfm0.png" alt="sample"></div>
+            <!-- <div class="tile-bar"></div> -->
+            <div class="item-text">
+              <h2>Item Name</h2>
+              <h3>Item Price</h3>
+            </div>
+            <div class="item-cart-options">
+                <form class="tile-cart">
+                    <select class="quantity-tab">
+                      <option value="1" selected="selected">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select><h4><button class="tile-cart-button">Add to Cart</button>
+                  </h4>
+                </form>
+            </div>
+          </div>
+
+          <div id="item-10" class="item-tile">
+            <div class="item-image"><img class="item-image" src="https://i.imgur.com/k6krfm0.png" alt="sample"></div>
+            <!-- <div class="tile-bar"></div> -->
+            <div class="item-text">
+              <h2>Item Name</h2>
+              <h3>Item Price</h3>
+            </div>
+            <div class="item-cart-options">
+                <form class="tile-cart">
+                    <select class="quantity-tab">
+                      <option value="1" selected="selected">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select><h4><button class="tile-cart-button">Add to Cart</button>
+                  </h4>
+                </form>
+            </div>
+          </div>
 
           </div>
 
@@ -91,7 +298,6 @@
         <div id="footer">
 
         </div>
-      </div>
 
 <!-- CHANGE PASSWORD Modal -->
               <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
