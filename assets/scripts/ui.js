@@ -28,12 +28,13 @@ const getTilesError = function (error) {
 // many milliseconds; otherwise user will need to dismiss
 const showAlert = function (context, msgBold, msgText, fadeTime) {
   console.log('in ui.showAlert')
-  $('#alert-zone').html(`<div class="alert alert-${context} alert-dismissible" role="alert">
+  $('#alert-zone').html(`<div class="alert alert-${context} alert-dismissible" role="alert" height="50">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <strong><span="msg-bold">${msgBold}</span></strong> <span id="msgText">${msgText}</span>
   </div>`)
   if (fadeTime) {
     $(`#alert-zone .alert-${context}`).delay(fadeTime).fadeOut()
+    // $('#alert-zone').html(``)
   }
 }
 
