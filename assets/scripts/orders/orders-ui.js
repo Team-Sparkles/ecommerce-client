@@ -46,10 +46,23 @@ const updateOrderSuccess = function (response) {
 }
 
 const createOrderSuccess = function (response) {
-  console.log('response.order from createOrderSuccess is: ', response.order)
-  $('#orderId').html(response.order._id)
-  if (response.order.items.length > 0) {
-    const cartItemsHtml = cartItemsHandlebars({ items: response.order.items })
+  // console.log('response.order from createOrderSuccess is: ', response.order)
+  // $('#orderId').html(response.order._id)
+  // if (response.order.items.length > 0) {
+  //   const cartItemsHtml = cartItemsHandlebars({ items: response.order.items })
+  //   $('#cart-items').html('')
+  //   $('#cart-items').html(cartItemsHtml)
+  // } else {
+  //   $('#cart-items').html('You have nothing in your cart.')
+  // }
+  updateCartDetails(response.order)
+}
+
+const updateCartDetails = function (order) {
+  console.log('order from updateCartDetails is: ', order)
+  $('#orderId').html(order._id)
+  if (order.items.length > 0) {
+    const cartItemsHtml = cartItemsHandlebars({ items: order.items })
     $('#cart-items').html('')
     $('#cart-items').html(cartItemsHtml)
   } else {
