@@ -11,7 +11,7 @@ body {
 // MAIN SECTIONS
 
 #header-nav {
-  background-color: $dark-grey;
+  background-color: $primeblue-dark;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -25,21 +25,21 @@ body {
   height: 300px;
   width: 100%;
   float: left;
-background-image: url("https://i.imgur.com/w0ZQY0W.png");
+background-image: url("https://i.imgur.com/Orj0GP0.png");
 background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: contain;
+background-attachment: scroll;
+background-size: cover;
 }
 
 #sections {
-  background-color: $bold-grey;
+  background-color: $primeblue-light;
   width: 100%;
-  height: 40px;
+  height: 80px;
   float: left;
 }
 
 #marketplace {
-  background-color: $pure-white;
+  background-color: $tan-light;
   height: auto;
   padding: 20px;
   width: 100%;
@@ -54,7 +54,7 @@ background-size: contain;
 }
 
 #footer {
-  background-color: $pure-black;
+  background-color: $primeblue-heavy;
   height: 150px;
   margin: 0 auto;
   clear: both;
@@ -72,19 +72,23 @@ background-size: contain;
 
 .header {
   height: 50px;
-  border: 2px;
-  border-style: solid;
-  border-color: $pure-white;
   display: block;
 }
 
 #header-logo {
-  width: 150px;
+  width: 175px;
   float: left;
 }
 
+.nozama-logo {
+  padding: 2px;
+  position: relative;
+     top: 50%;
+     transform: perspective(1px) translateY(-50%);
+}
+
 #header-announcer {
-  // DEPR
+  // DEPRICIATED
   // width: 300px;
   // float: left;
 }
@@ -92,32 +96,198 @@ background-size: contain;
 #header-user-options {
   width: 400px;
   float: right;
+  text-align: right;
+  vertical-align: center;
+  position: relative;
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
 }
 
 #header-checkout-icon {
-  width: 50px;
+  width: 60px;
   float: right;
 }
 
 #sign-out-button {
-
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: inline-block;
+  border-radius: 4px;
+  background-color: $accentpurple-medium;
+  border: none;
+  color: $tan-light;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height: 30px;
+}
+#sign-out-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#sign-out-button span::after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+#sign-out-button:hover span {
+  padding-right: 25px;
+}
+#sign-out-button:hover span::after {
+  opacity: 1;
+  right: 0;
 }
 
 #sign-in-button {
-
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: inline-block;
+  border-radius: 4px;
+  background-color: $accentpurple-medium;
+  border: none;
+  color: $tan-light;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height: 30px;
+}
+#sign-in-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#sign-in-button span::after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+#sign-in-button:hover span {
+  padding-right: 25px;
+}
+#sign-in-button:hover span::after {
+  opacity: 1;
+  right: 0;
 }
 
 #change-password-button {
-
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: inline-block;
+  border-radius: 4px;
+  background-color: $accentpurple-medium;
+  border: none;
+  color: $tan-light;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height: 30px;
+}
+#change-password-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#change-password-button span::after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+#change-password-button:hover span {
+  padding-right: 25px;
+}
+#change-password-button:hover span::after {
+  opacity: 1;
+  right: 0;
 }
 
-#sign-out-button {
-
+#sign-up-button {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: inline-block;
+  border-radius: 4px;
+  background-color: $accentpurple-medium;
+  border: none;
+  color: $tan-light;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height: 30px;
+}
+#sign-up-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+#sign-up-button span::after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+#sign-up-button:hover span {
+  padding-right: 25px;
+}
+#sign-up-button:hover span::after {
+  opacity: 1;
+  right: 0;
 }
 
 // HERO SECTIONS
 
 // SECTIONS SECTIONS
+
+.section-text {
+  height: 100px;
+  width: 100%;
+  position: relative;
+  top: 5;
+  text-align: right;
+  padding: 10px;
+  .section-text a:hover {
+    color: $tan-light;
+  }
+}
+
+.section-text,
+h2 {
+  font-size: 27px;
+  color: $primeblue-medium;
+  text-align: center;
+}
+
+.section-text,
+h3 {
+  font-size: 16px;
+  color: $primeblue-medium;
+}
 
 // MARKETPLACE SECTIONS
 
@@ -125,7 +295,8 @@ background-size: contain;
   width: 250px;
   height: 300px;
   margin: 20px;
-  border-color: $standard-grey;
+  border-color: $primeblue-soft;
+  background-color: $primeblue-light;
   border-radius: 5px;
   border-style: solid;
   float: left;
@@ -150,7 +321,7 @@ background-size: contain;
 
 .item-text, h2 {
   font-size: 25px;
-  color: $dark-grey;
+  color: $pure-black;
   padding-right: 5px;
 }
 
@@ -169,8 +340,7 @@ background-size: contain;
   bottom: 0;
   border-top: 1px;
   border-top-style: solid;
-  border-top-color: $standard-grey;
-  margin: 0 auto;
+  border-top-color: $tan-medium;
   height: auto;
   margin: 0 auto;
   padding-right: 10px;
