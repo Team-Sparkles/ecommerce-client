@@ -46,8 +46,8 @@ const createOrderSuccess = function (response) {
 const displayOrders = function () {
   ordersApi.showOrders()
     .then(response => {
-      console.log('response.orders from showOrders is: :', response.orders)
-      console.log('typeof response.orders from showOrders is: :', typeof response.orders)
+      // console.log('response.orders from showOrders is: :', response.orders)
+      // console.log('typeof response.orders from showOrders is: :', typeof response.orders)
       const orderListHtml = orderListHandlebars({ orders: response.orders })
       $('#past-order-list').html('')
       $('#past-order-list').html(orderListHtml)

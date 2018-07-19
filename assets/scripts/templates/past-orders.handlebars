@@ -2,6 +2,7 @@
    <th>View</th>
    <th>Order</th>
    <th>Total</th>
+   <th>Complete</th>
  </tr>
 
 {{#each orders as |order|}}
@@ -9,5 +10,6 @@
       <td><button class="show-past-order-button" data-id="{{order._id}}" type="button">View</button></td>
       <td>{{order._id}}</td>
       <td></td>
+      <td>{{order.checkoutComplete}}</td>
     </tr>
 {{/each}}
