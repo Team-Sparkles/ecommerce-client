@@ -32,7 +32,7 @@ https://github.com/Team-Sparkles/ecommerce-api
 USER STORIES
 ------------
 
-Mary is a new user to Nozama, and will want to view all products (name, price per unit) whether or not she is logged in or not.
+Mary is a new user to Nozama, and will want to view all products (name, price per unit) whether or not she is logged in.
 
 Mary will want to create an account using her email, and then immediately be able to start purchasing once she logs in.
 
