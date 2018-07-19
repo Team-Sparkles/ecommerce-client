@@ -24,9 +24,12 @@ const onCreateOrder = function () {
 }
 
 const addItemToOrder = function () {
+  // find item ID from button clicked
   const itemId = $(this).attr('data-id')
   console.log('itemId is: ', itemId)
-  const orderId = $('#orderId').html()
+  // finds the order id based on the contents of the first element with class
+  // .order-id
+  const orderId = $('.order-id').html()
   console.log('order id is: ', orderId)
   ordersApi.showOrder(orderId)
     .then((response) => {

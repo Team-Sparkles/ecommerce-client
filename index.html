@@ -65,8 +65,8 @@
 
         <!-- SHOPPING CART TEST MAIN -->
         <div id="shopping-cart-test" data-id="noUserSignedIn">
-          <h3>Order # <span id="orderId">Uh oh! No user is signed in!</span></h3>
-          <div id="cart-items">
+          <h3>Order # <span class="order-id">Uh oh! No user is signed in!</span></h3>
+          <div id="cart-items-test">
           <!-- TO BE FILLED IN BY HANDLEBARS -->
           </div>
         </div>
@@ -174,10 +174,7 @@
       </div>
     </div>
 
-
-
-
-<!-- SHOPPING CART ICON modal -->
+<!-- SHOPPING CART modal -->
     <div class="modal fade" id="shoppingCartModal" tabindex="-1" role="dialog" aria-labelledby="shoppingCartModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -188,12 +185,17 @@
             </button>
           </div>
           <div class="modal-body">
-            <!-- HANDLEBARS CONTENT HERE -->
+            <div id="shopping-cart" data-id="noUserSignedIn">
+              <h3>Order # <span class="order-id">Uh oh! No user is signed in!</span></h3>
+              <div id="cart-items">
+              <!-- TO BE FILLED IN BY HANDLEBARS -->
+              </div>
+            </div>
             <p class="auth-alert-modal"></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>
