@@ -42,6 +42,7 @@ const updateOrderSuccess = function (response) {
 
 const createOrderSuccess = function (response) {
   updateCartDetails(response.order)
+  ui.showAlert('success', 'Success!', 'We\'ve created a new order for you. Add some items to it below!', 3000)
 }
 
 const displayOrders = function () {

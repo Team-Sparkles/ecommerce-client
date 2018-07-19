@@ -4,6 +4,7 @@
 const ordersApi = require('./orders-api')
 const ordersUi = require('./orders-ui')
 const orderDetailHandlebars = require('../templates/past-cart-detail.handlebars')
+const ui = require('../ui')
 
 // event handlers for...
 const addHandlers = function () {
@@ -44,6 +45,9 @@ const onShowOrder = function () {
     .catch(console.error)
 }
 
+const addAlert = function () {
+  ui.showAlert('success', 'Success!', 'Item is added to cart!', 3000)
+}
 
 const onCreateOrder = function () {
   const data = {
@@ -83,6 +87,7 @@ const processUpdateRequest = function () {
       // if add button was clicked, add new item requested to array of id refrences
       if (buttonClass === 'tile-cart-button') {
         itemsIdsOnlyArray.push(itemId)
+        addAlert()
       // else if remove button was clicked, remove item from
       } else if (buttonClass === 'remove-item-button') {
         // find index of first element in array that matches the item ID you
