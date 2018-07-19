@@ -1,5 +1,6 @@
 
 const events = require('./events')
+const config = require('./config')
 const authEvents = require('./auth/auth-events')
 const ordersEvents = require('./orders/orders-events')
 
@@ -15,6 +16,7 @@ $(() => {
   events.getTiles()
   ordersEvents.addHandlers()
   console.log('StripeCheckout is ', StripeCheckout)
+
   // stripe stuff previously in index.html
   const checkoutHandler = StripeCheckout.configure({
     key: 'pk_test_ikhOV44uVLXegqqnKBGr490P',
@@ -29,7 +31,7 @@ $(() => {
     })
   })
   function handleToken (token) {
-    fetch('http://localhost:4741/charge', {
+    fetch(`${config.apiUrl}/charge`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(token)
