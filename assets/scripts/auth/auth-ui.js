@@ -15,7 +15,6 @@ const signUpError = function (error) {
 const signInSuccess = function (response) {
   // store data retricved from server
   store.user = response.user
-
   // change which auth options are available
   $('.sign-up').addClass('hidden')
   $('.sign-in').addClass('hidden')
@@ -61,6 +60,12 @@ const changePasswordError = function (error) {
 
 // run on successful sign-outline (note no response expected from server)
 const signOutSuccess = function (response) {
+  // update order id in all fields with class order-id
+  // (currently applies to both shopping cart modal and shopping cart test area)
+  $('.order-id').html('Uh oh! No user is signed in!')
+  $('#cart-items').html('')
+  // REMOVE THIS LINE WHEN DONE TESTING SHOPPPING CART; GOES TO MAIN PAGE, NOT MODAL
+  $('#cart-items-test').html('')
   delete store.user
   // change which auth options are available
   $('.sign-up').removeClass('hidden')

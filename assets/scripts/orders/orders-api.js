@@ -17,11 +17,15 @@ const createOrder = function (data) {
   })
 }
 
+// THIS FUNCTION NOT YET TESTED
 // INDEX - make a call to the server to show all orders
 const showOrders = function () {
   return $.ajax({
     method: 'GET',
-    url: config.apiUrl + '/orders'
+    url: config.apiUrl + '/orders',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
@@ -53,9 +57,11 @@ const updateOrder = function (id, data) {
 
 // DESTROY - make a call to server to delete an order
 const deleteOrder = function (id) {
+  console.log('inside deleteOrder and id is ', id)
+  console.log('inside deleteOrder and store.user.token is ', store.user.token)
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + `/orders/:${id}`,
+    url: config.apiUrl + `/orders/${id}`,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }

@@ -3,7 +3,6 @@
 // const getFormFields = require('../../../lib/get-form-fields')
 const ordersApi = require('./orders-api')
 const ordersUi = require('./orders-ui')
-const store = require('../store')
 
 // event handlers for...
 const addHandlers = function () {
@@ -13,7 +12,6 @@ const addHandlers = function () {
 }
 
 const onCreateOrder = function () {
-  console.log('you want to create a new order and store.user is : ', store.user)
   const data = {
     order: {
       items: [],

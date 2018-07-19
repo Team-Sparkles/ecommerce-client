@@ -19,11 +19,6 @@ const showOrderError = function (error) {
   ui.showAlert('danger', 'Warning!', 'Failed to load order from database', 3000)
 }
 
-const deleteOrderError = function (error) {
-  console.log('Error from deleteOrderError is: ', error)
-  ui.showAlert('danger', 'Warning!', 'Failed to delete order from database', 3000)
-}
-
 const updateOrderError = function (error) {
   console.log('Error from updateOrderError is: ', error)
   ui.showAlert('danger', 'Warning!', 'Failed to update order in database', 3000)
@@ -35,10 +30,6 @@ const showOrdersSuccess = function (response) {
 
 const showOrderSuccess = function (response) {
   console.log('Response from showOrderSuccess is: ', response)
-}
-
-const deleteOrderSuccess = function (response) {
-  console.log('Response from deleteOrderSuccess is: ', response)
 }
 
 const updateOrderSuccess = function (response) {
@@ -78,8 +69,6 @@ module.exports = {
   showOrdersSuccess: showOrdersSuccess,
   showOrderError: showOrderError,
   showOrderSuccess: showOrderSuccess,
-  deleteOrderError: deleteOrderError,
-  deleteOrderSuccess: deleteOrderSuccess,
   updateOrderError: updateOrderError,
   updateOrderSuccess: updateOrderSuccess,
   createOrderError: createOrderError,
