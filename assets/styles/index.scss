@@ -1,6 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+@import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'colors.scss';
 
 body {
@@ -12,37 +12,35 @@ body {
 
 #header-nav {
   background-color: $primeblue-dark;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
   height: 50px;
   width: 100%;
+  top: 0;
+  position: sticky;
   z-index: 999;
 }
 
 #hero {
-  // background-color: $standard-grey;
   height: 300px;
   width: 100%;
   float: left;
-background-image: url("https://i.imgur.com/zfjNma5.png");
-background-repeat: no-repeat;
-background-attachment: fixed;
-background-size: contain !important;
-@media only screen and (max-width: 996px) {
-  background-image: url("https://i.imgur.com/5O7JmH9.png");
-  background-size: contain !important;
+  background-image: url("https://i.imgur.com/zfjNma5.png");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: contain !important;
+  @media only screen and (max-width: 996px) {
+    background-image: url("https://i.imgur.com/5O7JmH9.png");
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     @media only screen and (max-width: 715px) {
       background-image: url("https://i.imgur.com/5O7JmH9.png");
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover !important;
       resize: vertical;
-      }
     }
   }
+}
 
 #sections {
   background-color: $primeblue-light;
@@ -77,7 +75,7 @@ background-size: contain !important;
   width: 90%;
   @media only screen and (max-width: 700px) {
     width: 100%;
-    }
+  }
   margin: 0 auto;
 }
 
@@ -96,8 +94,8 @@ background-size: contain !important;
 .nozama-logo {
   padding: 2px;
   position: relative;
-     top: 50%;
-     transform: perspective(1px) translateY(-50%);
+  top: 50%;
+  transform: perspective(1px) translateY(-50%);
 }
 
 #header-announcer {
@@ -130,7 +128,7 @@ background-size: contain !important;
   background: none!important;
   color: inherit;
   border: none;
-  padding: 0!important;
+  padding: 0!important !important;
   font: inherit;
   cursor: pointer;
 }
@@ -151,12 +149,14 @@ background-size: contain !important;
   margin: 5px;
   height: 30px;
 }
+
 #sign-out-button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
+
 #sign-out-button span::after {
   content: '\00bb';
   position: absolute;
@@ -165,9 +165,11 @@ background-size: contain !important;
   right: -20px;
   transition: 0.5s;
 }
+
 #sign-out-button:hover span {
   padding-right: 25px;
 }
+
 #sign-out-button:hover span::after {
   opacity: 1;
   right: 0;
@@ -189,12 +191,14 @@ background-size: contain !important;
   margin: 5px;
   height: 30px;
 }
+
 #sign-in-button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
+
 #sign-in-button span:after {
   content: '\00bb';
   position: absolute;
@@ -203,9 +207,11 @@ background-size: contain !important;
   right: -20px;
   transition: 0.5s;
 }
+
 #sign-in-button:hover span {
   padding-right: 25px;
 }
+
 #sign-in-button:hover span:after {
   opacity: 1;
   right: 0;
@@ -227,12 +233,14 @@ background-size: contain !important;
   margin: 5px;
   height: 30px;
 }
+
 #change-password-button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
+
 #change-password-button span::after {
   content: '\00bb';
   position: absolute;
@@ -241,9 +249,11 @@ background-size: contain !important;
   right: -20px;
   transition: 0.5s;
 }
+
 #change-password-button:hover span {
   padding-right: 25px;
 }
+
 #change-password-button:hover span::after {
   opacity: 1;
   right: 0;
@@ -265,12 +275,14 @@ background-size: contain !important;
   margin: 5px;
   height: 30px;
 }
+
 #sign-up-button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
+
 #sign-up-button span::after {
   content: '\00bb';
   position: absolute;
@@ -279,9 +291,11 @@ background-size: contain !important;
   right: -20px;
   transition: 0.5s;
 }
+
 #sign-up-button:hover span {
   padding-right: 25px;
 }
+
 #sign-up-button:hover span::after {
   opacity: 1;
   right: 0;
@@ -303,12 +317,14 @@ background-size: contain !important;
   margin: 5px;
   height: 30px;
 }
+
 #see-orders-button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
+
 #see-orders-button span::after {
   content: '\00bb';
   position: absolute;
@@ -317,15 +333,23 @@ background-size: contain !important;
   right: -20px;
   transition: 0.5s;
 }
+
 #see-orders-button:hover span {
   padding-right: 25px;
 }
+
 #see-orders-button:hover span::after {
   opacity: 1;
   right: 0;
 }
 
 // HERO SECTIONS
+
+.hero-text {
+  font-size: 27px;
+  color: $tan-light;
+  text-align: center;
+}
 
 // SECTIONS SECTIONS
 
@@ -338,6 +362,7 @@ background-size: contain !important;
   text-align: center;
   font-size: 20px;
   padding: 10px;
+
   .section-text a:hover {
     color: $tan-light;
   }
@@ -349,6 +374,7 @@ background-size: contain !important;
   margin-top: 10px;
   text-align: right;
   padding: 10px;
+
   .section-text a:hover {
     color: $tan-light;
   }
@@ -368,6 +394,7 @@ h3 {
 }
 
 // MARKETPLACE SECTIONS
+// ** IMAGES DEPRECIATION LISTED **
 
 .item-tile {
   width: 250px;
@@ -386,7 +413,8 @@ h3 {
   position: relative;
   // height: 150px; DEPR - re-add for images
   // width: 100%;
-  object-fit: fill;
+  object-fit: contain;
+  background-size: contain;
 }
 
 .item-text {
@@ -398,13 +426,15 @@ h3 {
   padding: 10px;
 }
 
-.item-text, h2 {
+.item-text,
+h2 {
   font-size: 25px;
   color: $pure-black;
   padding-right: 5px;
 }
 
-.item-text, h3 {
+.item-text,
+h3 {
   font-size: 16px;
   color: $dark-grey;
   padding-right: 5px;
@@ -449,12 +479,14 @@ h3 {
   margin-left: 10px;
   height: 25px;
 }
+
 .tile-cart-button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
+
 .tile-cart-button span::after {
   content: '\00bb';
   position: absolute;
@@ -463,9 +495,11 @@ h3 {
   right: -20px;
   transition: 0.5s;
 }
+
 .tile-cart-button:hover span {
   padding-right: 25px;
 }
+
 .tile-cart-button:hover span::after {
   opacity: 1;
   right: 0;
@@ -479,4 +513,49 @@ h3 {
   border-color: $light-grey;
   position: absolute;
   bottom: 37px;
+}
+
+// CART ITEMS
+
+#shopping-cart {
+  background-color: $tan-light;
+  height: auto;
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: $primeblue-light;
+  float: left;
+  position: relative;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#shopping-cart-table {
+  width: 90%;
+  border-color: black;
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid $primeblue-dark;
+    text-align: left;
+    padding: 8px;
+    font-family: arial, sans-serif;
+}
+
+tr:nth-child(even) {
+    background-color: $tile-offwhite;
+}
+tr:nth-child(odd) {
+    background-color: $pure-white;
+}
+
+#total-box {
+  width: 90%;
+  height: 200px;
+  text-align: right;
+  background-color: $standard-grey;
+  font-size: 25px;
 }
