@@ -10,6 +10,7 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="https://checkout.stripe.com/checkout.js"></script>
     </head>
     <body>
 
@@ -194,7 +195,12 @@
             <p class="auth-alert-modal"></p>
           </div>
           <div class="modal-footer">
-            <form action="http://localhost:4741/charge" method="POST">
+            <h2>Stripe Checkout Example</h2>
+
+            <div id="shop">
+              <button id="buttonCheckout">Checkout</button>
+            </div>
+            <!-- <form action="http://localhost:4741/charge" method="POST">
               <script
               src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="pk_test_g6do5S237ekq10r65BnxO6S0"
@@ -205,7 +211,7 @@
               data-locale="auto"
               data-zip-code="true">
               </script>
-            </form>
+            </form> -->
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
@@ -213,4 +219,29 @@
     </div>
 
     </body>
+    <script>
+      var checkoutHandler = StripeCheckout.configure({
+        key: "pk_test_g6do5S237ekq10r65BnxO6S0",
+        locale: "auto"
+      })
+      var button = document.getElementById("buttonCheckout");
+      button.addEventListener("click", function(ev) {
+        checkoutHandler.open({
+          name: "Sample Store",
+          description: "Example Purchase",
+          token: handleToken
+        })
+      })
+      function handleToken(token) {
+        fetch("http://localhost:4741/charge", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify(token)
+        })
+        .then(output => {
+          if (output.status === "succeeded")
+          document.getElementById("shop").innerHTML = "<p>Purchase complete!</p>";
+        })
+      }
+    </script>
 </html>
