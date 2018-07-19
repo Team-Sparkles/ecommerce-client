@@ -2,6 +2,9 @@
 // require dependencies
 const ui = require('../ui')
 const cartItemsHandlebars = require('../templates/cart-items.handlebars')
+const orderListHandlebars = require('../templates/past-orders.handlebars')
+const ordersApi = require('./orders-api')
+
 // const store = require('../store')
 
 const showOrdersError = function (error) {
@@ -38,6 +41,18 @@ const updateOrderSuccess = function (response) {
 
 const createOrderSuccess = function (response) {
   updateCartDetails(response.order)
+}
+
+const displayOrders = function () {
+  ordersApi.showOrders()
+    .then(response => {
+      console.log('response.orders from showOrders is: :', response.orders)
+      console.log('typeof response.orders from showOrders is: :', typeof response.orders)
+      const orderListHtml = orderListHandlebars({ orders: response.orders })
+      $('#past-order-list').html('')
+      $('#past-order-list').html(orderListHtml)
+    })
+    .catch(console.error)
 }
 
 // the order passed in here needs to be the kind that's populated with full
@@ -85,5 +100,6 @@ module.exports = {
   updateOrderSuccess: updateOrderSuccess,
   createOrderError: createOrderError,
   createOrderSuccess: createOrderSuccess,
-  updateCartDetails: updateCartDetails
+  updateCartDetails: updateCartDetails,
+  displayOrders: displayOrders
 }

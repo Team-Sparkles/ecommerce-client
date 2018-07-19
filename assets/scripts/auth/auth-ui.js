@@ -3,6 +3,7 @@
 const ui = require('../ui')
 const store = require('../store')
 const ordersEvents = require('../orders/orders-events.js')
+const ordersUi = require('../orders/orders-ui.js')
 
 // run on sign up error
 const signUpError = function (error) {
@@ -27,6 +28,8 @@ const signInSuccess = function (response) {
   $('#signInModal').modal('hide')
   $('#signUpModal').modal('hide')
   ordersEvents.onCreateOrder()
+  console.log('about to call displayOrders')
+  ordersUi.displayOrders()
 }
 
 // run on sign-in error
