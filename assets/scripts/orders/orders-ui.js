@@ -62,6 +62,9 @@ const updateCartDetails = function (order) {
     // REMOVE THIS LINE WHEN DONE TESTING SHOPPING CART; GOES TO MAIN PAGE, NOT MODAL
     $('#cart-items-test').html('You have nothing in your cart.')
   }
+  // TODO: Figure out how to write total cost of cart to page (in dollar format
+  // TODO: Figure out how to set total cost of cart (in cents) as the  right
+  // kind of attribute for stripe to use
 }
 
 module.exports = {
