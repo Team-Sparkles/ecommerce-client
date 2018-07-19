@@ -31,23 +31,23 @@ const addItemToOrder = function () {
   // .order-id
   const orderId = $('.order-id').html()
   console.log('order id is: ', orderId)
+
+  // get order in its current form from DB (which includes populated items)
   ordersApi.showOrder(orderId)
     .then((response) => {
-      // const order = response.order
-      console.log('response.order is ', response.order)
-      console.log('response.order.items is ', response.order.items)
-      console.log('response.order.items[0] is: ', response.order.items[0])
-      if (response.order.items[0]) {
-        console.log('response.order.items[0]._id is: ', response.order.items[0]._id)
-      }
-      console.log('typeof response.order.items is: ', typeof response.order.items)
+      // create an array for item id references
       let itemsIdsOnlyArray = []
+      // loop through items, which come in populated, grab their ids, and push
+      // only the ids to the array
       response.order.items.forEach((item) => {
         itemsIdsOnlyArray.push(item._id)
       })
       console.log('updated items array w/o extra details : ', itemsIdsOnlyArray)
+      // add the new item requested to the array of id references
       itemsIdsOnlyArray.push(itemId)
       console.log('updated item list is: ', itemsIdsOnlyArray)
+      // set up data to update order with, using the items array made up of
+      // only IDs, not populated objects
       const data = {
         order: {
           items: itemsIdsOnlyArray,
@@ -55,21 +55,19 @@ const addItemToOrder = function () {
         }
       }
       console.log('updated response about to be saved is: ', data)
+      // call the function to update the order, passing in the order number and
+      // the revised data
       ordersApi.updateOrder(orderId, data)
-        .then((response) => {
-          console.log('succeeded at updating record, about to show record')
-          return response
-        })
+        // because our update route doesn't return any data, we have to
+        // do another show to retrieve the updated order with populated items
         .then(() => ordersApi.showOrder(orderId))
+        // send the order from the response to the updateCartDetails function
+        // to be printed to page
         .then(response => ordersUi.updateCartDetails(response.order))
+        // log any errors along the way
         .catch(error => console.error)
     })
     .catch(ordersUi.showOrderError)
-  // get this one order from db
-
-  // push this itemID onto item array of order data
-  // update order with new data
-  // run update success function
 }
 
 module.exports = {
