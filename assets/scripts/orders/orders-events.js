@@ -27,6 +27,19 @@ const onShowOrder = function () {
       $('#order-detail-detail').html(orderDetailHtml)
       $('#order-detail').removeClass('hidden')
       $('#past-order-id').html(`<h3>Details for Order # ${orderId}</h3>`)
+      // calculate total price of cart
+      const priceArray = response.order.items.map(item => item.price)
+      console.log('priceArray is ', priceArray)
+      let totalCents = 0
+      if (priceArray.length > 0) {
+        totalCents = priceArray.reduce((total, num) => total + num, 0)
+      }
+      const totalDollars = (totalCents / 100).toFixed(2)
+      console.log('order.totalDollars from updateCartDetails is ', totalDollars)
+      console.log('order.totalCents from updateCartDetails is ', totalCents)
+      // update order id and order total in all fields with those classes
+      // (currently applies to both shopping cart modal and shopping cart test area)
+      $('#past-order-total').html(`<h5>Total Cost: ${totalDollars}</h5>`)
     })
     .catch(console.error)
 }
