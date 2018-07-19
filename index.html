@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Nozama Aquatic Aquisitions</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -63,9 +63,12 @@
 
         </div>
 
-        <!-- SHOPPING CART MAIN -->
-        <div id="shopping-cart">
-
+        <!-- SHOPPING CART TEST MAIN -->
+        <div id="shopping-cart-test" data-id="noUserSignedIn">
+          <h3>Order # <span class="order-id">Uh oh! No user is signed in!</span></h3>
+          <div id="cart-items-test">
+          <!-- TO BE FILLED IN BY HANDLEBARS -->
+          </div>
         </div>
 
         <!-- FOOTER MAIN -->
@@ -171,7 +174,7 @@
       </div>
     </div>
 
-<!-- SHOPPING CART ICON modal -->
+<!-- SHOPPING CART modal -->
     <div class="modal fade" id="shoppingCartModal" tabindex="-1" role="dialog" aria-labelledby="shoppingCartModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -182,7 +185,12 @@
             </button>
           </div>
           <div class="modal-body">
-            <!-- HANDLEBARS CONTENT HERE -->
+            <div id="shopping-cart" data-id="noUserSignedIn">
+              <h3>Order # <span class="order-id">Uh oh! No user is signed in!</span></h3>
+              <div id="cart-items">
+              <!-- TO BE FILLED IN BY HANDLEBARS -->
+              </div>
+            </div>
             <p class="auth-alert-modal"></p>
           </div>
           <div class="modal-footer">
@@ -198,7 +206,6 @@
               data-zip-code="true">
               </script>
             </form>
-            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Check out</button> -->
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
