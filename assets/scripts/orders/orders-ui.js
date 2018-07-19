@@ -3,6 +3,7 @@
 const ui = require('../ui')
 const cartItemsHandlebars = require('../templates/cart-items.handlebars')
 const orderListHandlebars = require('../templates/past-orders.handlebars')
+
 const ordersApi = require('./orders-api')
 
 // const store = require('../store')
@@ -55,6 +56,10 @@ const displayOrders = function () {
     .catch(console.error)
 }
 
+const displayOrder = function () {
+
+}
+
 // the order passed in here needs to be the kind that's populated with full
 // items array of objects
 const updateCartDetails = function (order) {
@@ -101,5 +106,6 @@ module.exports = {
   createOrderError: createOrderError,
   createOrderSuccess: createOrderSuccess,
   updateCartDetails: updateCartDetails,
-  displayOrders: displayOrders
+  displayOrders: displayOrders,
+  displayOrder: displayOrder
 }

@@ -3,13 +3,34 @@
 // const getFormFields = require('../../../lib/get-form-fields')
 const ordersApi = require('./orders-api')
 const ordersUi = require('./orders-ui')
+const orderDetailHandlebars = require('../templates/past-cart-detail.handlebars')
 
 // event handlers for...
 const addHandlers = function () {
   $('#marketplace').on('click', '.tile-cart-button', processUpdateRequest)
   $('#cart-items').on('click', '.remove-item-button', processUpdateRequest)
   $('#cart-items-test').on('click', '.remove-item-button', processUpdateRequest)
+  $('#past-order-list').on('click', '.show-past-order-button', onShowOrder)
 }
+
+// display details of past order
+const onShowOrder = function () {
+  const orderId = $(this).attr('data-id')
+  console.log('in onShowOrder and orderId is: ', orderId)
+  ordersApi.showOrder(orderId)
+    .then(response => {
+      console.log('response.order.items from showOrder is: :', response.order.items)
+      console.log('typeof response.order from showOrder is: :', typeof response.order.items)
+      console.log('response.order.items[0] from showOrder is: :', response.order.items[0])
+      const orderDetailHtml = orderDetailHandlebars({ items: response.order.items })
+      $('#order-detail-detail').html('')
+      $('#order-detail-detail').html(orderDetailHtml)
+      $('#order-detail').removeClass('hidden')
+      $('#past-order-id').html(`<h3>Details for Order # ${orderId}</h3>`)
+    })
+    .catch(console.error)
+}
+
 
 const onCreateOrder = function () {
   const data = {
