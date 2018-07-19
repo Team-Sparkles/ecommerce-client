@@ -13,7 +13,7 @@ const addHandlers = function () {
 }
 
 const addAlert = function () {
-  ui.showAlert('success', 'Success!', 'Added to cart!', 3000)
+  ui.showAlert('success', 'Success!', 'Item is added to cart!', 3000)
 }
 
 const onCreateOrder = function () {
