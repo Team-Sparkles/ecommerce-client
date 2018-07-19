@@ -191,11 +191,13 @@
               <!-- TO BE FILLED IN BY HANDLEBARS -->
               </div>
             </div>
+            <h3>Order Total: <span class="order-total">Uh oh! No order is loaded!</span></h3>
             <p class="auth-alert-modal"></p>
           </div>
           <div class="modal-footer">
             <form action="http://localhost:4741/charge" method="POST">
               <script
+              id="stripe-widget"
               src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="pk_test_g6do5S237ekq10r65BnxO6S0"
               data-amount="999"

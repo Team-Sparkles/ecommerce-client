@@ -44,9 +44,16 @@ const createOrderSuccess = function (response) {
 // items array of objects
 const updateCartDetails = function (order) {
   console.log('order from updateCartDetails is: ', order)
-  // update order id in all fields with class order-id
+  // REMOVE THESE WHEN MODEL IS UPDATED TO PROVIDE THIS DATA
+  order.totalDollars = '$10.00'
+  order.totalCents = 1000
+  console.log('order.totalDollars from updateCartDetails is ', order.totalDollars)
+  console.log('order.totalCents from updateCartDetails is ', order.totalCents)
+  // update order id and order total in all fields with those classes
   // (currently applies to both shopping cart modal and shopping cart test area)
   $('.order-id').html(order._id)
+  $('.order-total').html(order.totalDollars)
+  $('#stripe-widget').attr('data-amount', order.totalCents)
   // if there are any items, use Handlebars to loop through the items in the
   // order and write them to the #cart-items (and #cart-items-test) divs
   if (order.items.length > 0) {
@@ -62,9 +69,6 @@ const updateCartDetails = function (order) {
     // REMOVE THIS LINE WHEN DONE TESTING SHOPPING CART; GOES TO MAIN PAGE, NOT MODAL
     $('#cart-items-test').html('You have nothing in your cart.')
   }
-  // TODO: Figure out how to write total cost of cart to page (in dollar format
-  // TODO: Figure out how to set total cost of cart (in cents) as the  right
-  // kind of attribute for stripe to use
 }
 
 module.exports = {
