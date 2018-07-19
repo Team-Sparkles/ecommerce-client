@@ -1,0 +1,13 @@
+<tr>
+   <th>Qty</th>
+   <th>Item</th>
+   <th>Price</th>
+ </tr>
+
+{{#each items as |item|}}
+    <tr data-id="{{item._id}}" data-price="{{item.price}}" class="table-primary">
+      <td>1</td>
+      <td>{{item.name}}</td>
+      <td>{{item.dollarAmount}}</td>
+    </tr>
+{{/each}}

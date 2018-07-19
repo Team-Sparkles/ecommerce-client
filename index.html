@@ -65,12 +65,12 @@
         </div>
 
         <!-- SHOPPING CART TEST MAIN -->
-        <div id="shopping-cart-test" data-id="noUserSignedIn">
+        <!-- <div id="shopping-cart-test" data-id="noUserSignedIn">
           <h3>Order # <span class="order-id">Uh oh! No user is signed in!</span></h3>
-          <div id="cart-items-test">
+          <div id="cart-items-test"> -->
           <!-- TO BE FILLED IN BY HANDLEBARS -->
-          </div>
-        </div>
+          <!-- </div>
+        </div> -->
 
         <!-- FOOTER MAIN -->
         <div id="footer">
@@ -165,12 +165,25 @@
             </button>
           </div>
           <div class="modal-body">
-            <!-- HANDLEBARS CONTENT HERE -->
-            <p class="auth-alert-modal"></p>
+            <div id="past-orders">
+              <h3>Past Orders</h3>
+              <div id="past-order-list">
+              <!-- TO BE FILLED IN BY HANDLEBARS -->
+              </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <div id="order-detail">
+              <div id='past-order-id'></div>
+              <div id='past-order-total'></div>
+              <div id="order-detail-detail">
+                <!-- TO BE FILLED IN BY HANDLEBARS -->
+              </div>
             </div>
+            </div>
+          <p class="auth-alert-modal"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>
