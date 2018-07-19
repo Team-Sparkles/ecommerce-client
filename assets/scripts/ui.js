@@ -12,16 +12,6 @@ const getTilesError = function (error) {
   console.log('GET error is ', error)
 }
 
-// // display a message to the user
-// const showMessage = function (message) {
-//   $('#message').html(message)
-// }
-//
-// // remove message currently displayed to user
-// const clearMessage = function () {
-//   $('#message').html('')
-// }
-
 // uses Bootstrap to add a color-coded, dismissable alert based on context
 // context options: success (green), info (blue), warning (tan), danger (red)
 // if you pass in an optional fadeTime, the alert will hide itself after that
@@ -43,8 +33,6 @@ const clearAlerts = function () {
 }
 
 module.exports = {
-  // showMessage: showMessage,
-  // clearMessage: clearMessage,
   showAlert: showAlert,
   clearAlerts: clearAlerts,
   getTilesSuccess: getTilesSuccess,

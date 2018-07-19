@@ -3,6 +3,8 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const authApi = require('./auth-api')
 const authUi = require('./auth-ui')
+const ordersApi = require('../orders/orders-api')
+const store = require('../store')
 
 // event handlers for...
 const addHandlers = function () {
@@ -94,10 +96,14 @@ const onSignOut = function (event) {
   // prevent page refresh
   event.preventDefault()
   authUi.clearAuthMessage()
-  // send request to server
-  authApi.signOut()
+  const orderId = $('.order-id').html()
+  console.log('in onSignOut and order id is: ', orderId)
+  console.log('in onSignOut andstore.user.token is: ', store.user.token)
+  ordersApi.deleteOrder(orderId)
+    .then(authApi.signOut)
     .then(authUi.signOutSuccess)
     .catch(authUi.signOutError)
+    .catch(console.error)
 }
 
 module.exports = {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Nozama Aquatic Aquisitions</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -15,7 +15,7 @@
 
       <!-- HEADER MAIN -->
       <div id="header-nav">
-
+        <div id="alert-zone" class="alert-text"></div>
         <div id="header-logo" class="header"><img src="https://i.imgur.com/pneYOQE.gif" width="160" class="nozama-logo"></div>
         <!-- <div id="header-announcer" class="header">announcer</div> -->
         <div id="header-checkout-icon" class="header">
@@ -49,7 +49,6 @@
               <!-- <a href="null">Link</a> | <a href="null">Link</a> | <a href="null">Link</a> | <a href="null">Link</a> | <a href="null">Link</a> -->
               Welcome to <b>Nozama.com™</b> - Your Home For Great Deals!
             <!-- </h2> -->
-            <div id="alert-zone" class="section-text"></div>
           </div>
         </div>
 
@@ -64,9 +63,12 @@
 
         </div>
 
-        <!-- SHOPPING CART MAIN -->
-        <div id="shopping-cart">
-
+        <!-- SHOPPING CART TEST MAIN -->
+        <div id="shopping-cart-test" data-id="noUserSignedIn">
+          <h3>Order # <span class="order-id">Uh oh! No user is signed in!</span></h3>
+          <div id="cart-items-test">
+          <!-- TO BE FILLED IN BY HANDLEBARS -->
+          </div>
         </div>
 
         <!-- FOOTER MAIN -->
@@ -172,7 +174,7 @@
       </div>
     </div>
 
-<!-- SHOPPING CART ICON modal -->
+<!-- SHOPPING CART modal -->
     <div class="modal fade" id="shoppingCartModal" tabindex="-1" role="dialog" aria-labelledby="shoppingCartModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -183,12 +185,29 @@
             </button>
           </div>
           <div class="modal-body">
-            <!-- HANDLEBARS CONTENT HERE -->
+            <div id="shopping-cart" data-id="noUserSignedIn">
+              <h3>Order # <span class="order-id">Uh oh! No user is signed in!</span></h3>
+              <div id="cart-items">
+              <!-- TO BE FILLED IN BY HANDLEBARS -->
+              </div>
+            </div>
             <p class="auth-alert-modal"></p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
+          </div>
+          <div class="modal-footer">
+            <form action="http://localhost:4741/charge" method="POST">
+              <script
+              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+              data-key="pk_test_g6do5S237ekq10r65BnxO6S0"
+              data-amount="999"
+              data-name="Stripe.com"
+              data-description="Widget"
+              data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+              data-locale="auto"
+              data-zip-code="true">
+              </script>
+            </form>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 'use strict'
-const tileEvents = require('./events')
+const events = require('./events')
 const authEvents = require('./auth/auth-events')
+const ordersEvents = require('./orders/orders-events')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
@@ -9,9 +10,8 @@ const authEvents = require('./auth/auth-events')
 // require('./example')
 
 $(() => {
+  console.log('document loaded')
   authEvents.addHandlers()
-  $(document).ready(function () {
-    console.log('document loaded')
-    tileEvents.getTiles()
-  })
+  events.getTiles()
+  ordersEvents.addHandlers()
 })

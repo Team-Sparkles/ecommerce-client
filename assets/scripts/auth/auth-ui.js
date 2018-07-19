@@ -2,6 +2,7 @@
 // require dependencies
 const ui = require('../ui')
 const store = require('../store')
+const ordersEvents = require('../orders/orders-events.js')
 
 // run on sign up error
 const signUpError = function (error) {
@@ -25,6 +26,7 @@ const signInSuccess = function (response) {
   clearAuthForms()
   $('#signInModal').modal('hide')
   $('#signUpModal').modal('hide')
+  ordersEvents.onCreateOrder()
 }
 
 // run on sign-in error
@@ -58,6 +60,12 @@ const changePasswordError = function (error) {
 
 // run on successful sign-outline (note no response expected from server)
 const signOutSuccess = function (response) {
+  // update order id in all fields with class order-id
+  // (currently applies to both shopping cart modal and shopping cart test area)
+  $('.order-id').html('Uh oh! No user is signed in!')
+  $('#cart-items').html('')
+  // REMOVE THIS LINE WHEN DONE TESTING SHOPPPING CART; GOES TO MAIN PAGE, NOT MODAL
+  $('#cart-items-test').html('')
   delete store.user
   // change which auth options are available
   $('.sign-up').removeClass('hidden')
