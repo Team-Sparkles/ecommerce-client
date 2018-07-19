@@ -25,8 +25,6 @@ const onCreateOrder = function () {
     .catch(ordersUi.createOrderError)
 }
 
-
-
 const addItemToOrder = function () {
   // find item ID from button clicked
   const itemId = $(this).attr('data-id')
@@ -61,19 +59,10 @@ const addItemToOrder = function () {
       console.log('updated response about to be saved is: ', data)
       // call the function to update the order, passing in the order number and
       // the revised data
-      ordersApi.updateOrder(orderId, data)
-        // because our update route doesn't return any data, we have to
-        // do another show to retrieve the updated order with populated items
-        .then(() => ordersApi.showOrder(orderId))
-        // send the order from the response to the updateCartDetails function
-        // to be printed to page
-        .then(response => ordersUi.updateCartDetails(response.order))
-        // log any errors along the way
-        .catch(error => console.error)
+      onUpdateOrder(orderId, data)
     })
     .catch(ordersUi.showOrderError)
 }
-
 
 // removes a specific item from order when button is clicked
 const removeItemFromOrder = function () {
@@ -114,22 +103,27 @@ const removeItemFromOrder = function () {
       console.log('updated response about to be saved is: ', data)
       // call the function to update the order, passing in the order number and
       // the revised data (minus removed item)
-      ordersApi.updateOrder(orderId, data)
-        // because our update route doesn't return any data, we have to
-        // do another show to retrieve the updated order with populated items
-        .then(() => ordersApi.showOrder(orderId))
-        // send the order from the response to the updateCartDetails function
-        // to be printed to page
-        .then(response => ordersUi.updateCartDetails(response.order))
-        // log any errors along the way
-        .catch(error => console.error)
+      onUpdateOrder(orderId, data)
     })
     .catch(ordersUi.showOrderError)
+}
+
+const onUpdateOrder = function (orderId, data) {
+  ordersApi.updateOrder(orderId, data)
+    // because our update route doesn't return any data, we have to
+    // do another show to retrieve the updated order with populated items
+    .then(() => ordersApi.showOrder(orderId))
+    // send the order from the response to the updateCartDetails function
+    // to be printed to page
+    .then(response => ordersUi.updateCartDetails(response.order))
+    // log any errors along the way
+    .catch(error => console.error)
 }
 
 module.exports = {
   addHandlers: addHandlers,
   addItemToOrder: addItemToOrder,
   onCreateOrder: onCreateOrder,
-  removeItemFromOrder: removeItemFromOrder
+  removeItemFromOrder: removeItemFromOrder,
+  onUpdateOrder: onUpdateOrder
 }
