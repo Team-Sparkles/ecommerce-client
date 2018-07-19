@@ -38,6 +38,7 @@ const updateOrderSuccess = function (response) {
 
 const createOrderSuccess = function (response) {
   updateCartDetails(response.order)
+  ui.showAlert('success', 'Success!', 'We\'ve created a new order for you. Add some items to it below!', 3000)
 }
 
 // the order passed in here needs to be the kind that's populated with full

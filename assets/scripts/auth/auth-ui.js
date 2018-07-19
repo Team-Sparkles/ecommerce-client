@@ -74,6 +74,7 @@ const signOutSuccess = function (response) {
   $('.change-password').addClass('hidden')
   $('#see-orders-button').addClass('hidden')
   $('#shopping-cart-button').addClass('hidden')
+  ui.showAlert('success', 'Success!', 'We\'ve signed you out and deleted your cart.', 3000)
 }
 
 // run on sign-out error
