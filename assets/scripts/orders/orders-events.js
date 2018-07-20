@@ -64,14 +64,14 @@ const onCreateOrder = function () {
 const processUpdateRequest = function () {
   // find item ID from button clicked
   const itemId = $(this).attr('data-id')
-  console.log('itemId is: ', itemId)
+  // console.log('itemId is: ', itemId)
   // finds the order id based on the contents of the first element with class
   // .order-id
   const orderId = $('.order-id').html()
-  console.log('order id is: ', orderId)
+  // console.log('order id is: ', orderId)
   // checks what kind of button was clicked
   const buttonClass = $(this).attr('class')
-  console.log('button class is: ', buttonClass)
+  // console.log('button class is: ', buttonClass)
 
   // get order in its current form from DB (which includes populated items)
   ordersApi.showOrder(orderId)
@@ -83,7 +83,7 @@ const processUpdateRequest = function () {
       response.order.items.forEach((item) => {
         itemsIdsOnlyArray.push(item._id)
       })
-      console.log('updated items array before requested change: ', itemsIdsOnlyArray)
+      // console.log('updated items array before requested change: ', itemsIdsOnlyArray)
       // if add button was clicked, add new item requested to array of id refrences
       if (buttonClass === 'tile-cart-button') {
         itemsIdsOnlyArray.push(itemId)
@@ -93,12 +93,12 @@ const processUpdateRequest = function () {
         // find index of first element in array that matches the item ID you
         // asked to remove
         const firstMatchIndex = itemsIdsOnlyArray.findIndex(item => item === itemId)
-        console.log('need to delete from array the first match at position ', firstMatchIndex)
+        // console.log('need to delete from array the first match at position ', firstMatchIndex)
         // remove one element from array at that index
         itemsIdsOnlyArray.splice(firstMatchIndex, 1)
-        console.log('updated item list after removing item is: ', itemsIdsOnlyArray)
+        // console.log('updated item list after removing item is: ', itemsIdsOnlyArray)
       }
-      console.log('updated item list is: ', itemsIdsOnlyArray)
+      // console.log('updated item list is: ', itemsIdsOnlyArray)
       // set up data to update order with, using the items array made up of
       // only IDs, not populated objects
       const data = {
@@ -107,7 +107,7 @@ const processUpdateRequest = function () {
           checkoutComplete: false
         }
       }
-      console.log('updated response about to be saved is: ', data)
+      // console.log('updated response about to be saved is: ', data)
       // call the function to update the order, passing in the order number and
       // the revised data
       onUpdateOrder(orderId, data)

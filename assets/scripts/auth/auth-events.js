@@ -34,7 +34,7 @@ const onSignUp = function (event) {
   authUi.clearAuthMessage()
   // capture user credentials from form and send to server
   const data = getFormFields(event.target)
-  console.log('data is ', data)
+  // console.log('data is ', data)
   if (data.credentials.password !== data.credentials.password_confirmation) {
     authUi.signUpPasswordError()
   } else {
@@ -97,8 +97,8 @@ const onSignOut = function (event) {
   event.preventDefault()
   authUi.clearAuthMessage()
   const orderId = $('.order-id').html()
-  console.log('in onSignOut and order id is: ', orderId)
-  console.log('in onSignOut andstore.user.token is: ', store.user.token)
+  // console.log('in onSignOut and order id is: ', orderId)
+  // console.log('in onSignOut andstore.user.token is: ', store.user.token)
   ordersApi.deleteOrder(orderId)
     .then(authApi.signOut)
     .then(authUi.signOutSuccess)

@@ -239,7 +239,7 @@
           body: JSON.stringify(token)
         })
         .then(output => {
-          console.log('output.status is ', output.status)
+          // console.log('output.status is ', output.status)
           if (output.status === 200) {
             document.getElementById("shop").innerHTML = "<p>Purchase complete!</p>"
           }

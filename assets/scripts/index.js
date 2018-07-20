@@ -10,7 +10,7 @@ const ordersEvents = require('./orders/orders-events')
 // require('./example')
 
 $(() => {
-  console.log('document loaded')
+  // console.log('document loaded')
   authEvents.addHandlers()
   events.getTiles()
   ordersEvents.addHandlers()

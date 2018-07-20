@@ -42,8 +42,8 @@ const showOrder = function (id) {
 
 // UPDATE - make a call to server to update an order
 const updateOrder = function (id, data) {
-  console.log('data inside of updateOrder function is ', data)
-  console.log('id inside of updateOrder function is ', id)
+  // console.log('data inside of updateOrder function is ', data)
+  // console.log('id inside of updateOrder function is ', id)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + `/orders/${id}`,
@@ -57,8 +57,8 @@ const updateOrder = function (id, data) {
 
 // DESTROY - make a call to server to delete an order
 const deleteOrder = function (id) {
-  console.log('inside deleteOrder and id is ', id)
-  console.log('inside deleteOrder and store.user.token is ', store.user.token)
+  // console.log('inside deleteOrder and id is ', id)
+  // console.log('inside deleteOrder and store.user.token is ', store.user.token)
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + `/orders/${id}`,
