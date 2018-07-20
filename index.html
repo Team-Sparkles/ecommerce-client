@@ -8,9 +8,9 @@
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
       <!-- Do not add `script` tags-->
+      <script src="./assets/scripts/stripe-checkout.js"></script>
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="https://checkout.stripe.com/checkout.js"></script>
     </head>
     <body>
 
@@ -220,31 +220,4 @@
     </div>
 
     </body>
-    <script>
-      var checkoutHandler = StripeCheckout.configure({
-        key: "pk_test_ikhOV44uVLXegqqnKBGr490P",
-        locale: "auto"
-      })
-      var button = document.getElementById("buttonCheckout");
-      button.addEventListener("click", function(ev) {
-        checkoutHandler.open({
-          name: "Nozama Aquatic Aquisitions",
-          description: "Your Purchase",
-          token: handleToken
-        })
-      })
-      function handleToken(token) {
-        fetch("http://localhost:4741/charge", {
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify(token)
-        })
-        .then(output => {
-          console.log('output.status is ', output.status)
-          if (output.status === 200) {
-            document.getElementById("shop").innerHTML = "<p>Purchase complete!</p>"
-          }
-        })
-      }
-    </script>
 </html>
