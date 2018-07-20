@@ -1,6 +1,7 @@
 
 const events = require('./events')
 const config = require('./config')
+const ui = require('./ui')
 const authEvents = require('./auth/auth-events')
 const ordersEvents = require('./orders/orders-events')
 
@@ -11,7 +12,7 @@ const ordersEvents = require('./orders/orders-events')
 // require('./example')
 
 $(() => {
-  console.log('document loaded')
+  // console.log('document loaded')
   authEvents.addHandlers()
   events.getTiles()
   ordersEvents.addHandlers()
@@ -24,9 +25,13 @@ $(() => {
   })
   const button = document.getElementById('buttonCheckout')
   button.addEventListener('click', function (ev) {
+    console.log("$(this).attr('data-amount') is ", $(this).attr('data-amount'))
+    const cents = parseInt($(this).attr('data-amount'))
+    console.log('cents in click handler is ', cents)
     checkoutHandler.open({
       name: 'Nozama Aquatic Aquisitions',
       description: 'Your Purchase',
+      amount: cents,
       token: handleToken
     })
   })
@@ -42,8 +47,13 @@ $(() => {
         console.log('output.body is ', output.body)
         console.log('output.status is ', output.status)
         if (output.status === 200) {
-          document.getElementById('shop').innerHTML = '<p>Purchase complete!</p>'
-          console.log('about to run markOrderComplete')
+          // document.getElementById('shop').innerHTML = '<p>Purchase complete!</p>'
+          $('#shoppingCartModal').modal('hide')
+          ui.showAlert('success', 'Success!', 'Your payment has been processed', 2000)
+          setTimeout(ordersEvents.onCreateOrder, 2000)
+          // TODO: update record to show as completed
+          // TODO: add the charge id to the record
+          // ordersEvents.onCreateOrder()
         }
       })
   }

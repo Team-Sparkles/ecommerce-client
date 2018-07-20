@@ -177,12 +177,13 @@
               <div id="order-detail-detail">
                 <!-- TO BE FILLED IN BY HANDLEBARS -->
               </div>
+              <button type="button" id="orders-close-button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
             </div>
           <p class="auth-alert-modal"></p>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <div class="modal-footer" id="see-orders-modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
           </div>
         </div>
       </div>
@@ -210,7 +211,7 @@
           </div>
           <div class="modal-footer">
             <div id="shop">
-              <button id="buttonCheckout">Checkout</button>
+              <button id="buttonCheckout" data-amount="0">Checkout</button>
             </div>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
@@ -219,4 +220,5 @@
     </div>
 
     </body>
+
 </html>
