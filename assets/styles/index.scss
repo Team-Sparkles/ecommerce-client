@@ -559,3 +559,78 @@ tr:nth-child(odd) {
   background-color: $standard-grey;
   font-size: 25px;
 }
+
+.modal-title {
+  // background-color: $primeblue-light;
+  // font-size: 20px;
+  // padding: 5px;
+}
+
+.modal-content {
+  background-color: $tile-offwhite;
+}
+
+#seeOrdersModal {
+  // width: 600;
+  // height: 600;
+  // background-color: $tile-offwhite;
+}
+
+#seeOrdersModalLabel { // camelcase?
+// width: 750px;
+// height: 750px;
+}
+
+#past-orders {
+  // height: auto;
+}
+
+#past-order-list {
+  background-color: $tile-offwhite;
+  width: auto;
+  border-radius: 1px;
+  padding: 5px;
+  border-style: solid;
+  border-color: $light-grey;
+  height: 250px;
+  overflow: scroll;
+  clear: both;
+}
+
+#order-spacer {
+  // width: 600px;
+  // height: 1;
+}
+
+#order-detail-detail {
+//   background-color: $tan-soft;
+//   border: 1px;
+//   width: 300px;
+  height: auto;
+//   float: left;
+}
+
+#orders-button-scroll {
+  position: relative;
+  top: 300px;
+  padding-left: 50px;
+  padding-top: 70px;
+  float: left;
+}
+
+#see-orders-modal-footer {
+  // float: right;
+}
+
+#orders-close-button {
+  margin-top: 5px;
+  color: $tile-offwhite;
+  background-color: $accentpurple-medium;
+}
+
+// #modal-footer {
+//   background-color: $accentpurple-soft;
+//   position: relative;
+//   width: auto;
+//   height: auto;
+// }

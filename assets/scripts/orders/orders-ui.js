@@ -37,11 +37,12 @@ const showOrderSuccess = function (response) {
 }
 
 const updateOrderSuccess = function (response) {
-  // console.log('Response from updateOrderSuccess is: ', response)
+  displayOrders()
 }
 
 const createOrderSuccess = function (response) {
   updateCartDetails(response.order)
+  displayOrders()
   ui.showAlert('success', 'Success!', 'We\'ve created a new order for you. Add some items to it below!', 3000)
 }
 
@@ -79,7 +80,7 @@ const updateCartDetails = function (order) {
   // (currently applies to both shopping cart modal and shopping cart test area)
   $('.order-id').html(order._id)
   $('.order-total').html(totalDollars)
-  $('#stripe-widget').attr('data-amount', totalCents)
+  $('#buttonCheckout').attr('data-amount', totalCents)
   // if there are any items, use Handlebars to loop through the items in the
   // order and write them to the #cart-items (and #cart-items-test) divs
   if (order.items.length > 0) {
