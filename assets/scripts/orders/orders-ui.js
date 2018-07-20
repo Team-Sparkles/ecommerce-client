@@ -9,35 +9,34 @@ const ordersApi = require('./orders-api')
 // const store = require('../store')
 
 const showOrdersError = function (error) {
-  console.log('Error from showOrdersError is: ', error)
+  // console.log('Error from showOrdersError is: ', error)
   ui.showAlert('danger', 'Warning!', 'Failed to load orders from database', 3000)
 }
 
 const createOrderError = function (error) {
-  console.log('Error from createOrderError is: ', error)
+  // console.log('Error from createOrderError is: ', error)
   ui.showAlert('danger', 'Warning!', 'Failed to create new order in database', 3000)
 }
 
 const showOrderError = function (error) {
-  console.log('Error from showOrderError is: ', error)
+  // console.log('Error from showOrderError is: ', error)
   ui.showAlert('danger', 'Warning!', 'Failed to load order from database', 3000)
 }
 
 const updateOrderError = function (error) {
-  console.log('Error from updateOrderError is: ', error)
+  // console.log('Error from updateOrderError is: ', error)
   ui.showAlert('danger', 'Warning!', 'Failed to update order in database', 3000)
 }
 
 const showOrdersSuccess = function (response) {
-  console.log('Response from showOrdersError is: ', response)
+  // console.log('Response from showOrdersError is: ', response)
 }
 
 const showOrderSuccess = function (response) {
-  console.log('Response from showOrderSuccess is: ', response)
+  // console.log('Response from showOrderSuccess is: ', response)
 }
 
 const updateOrderSuccess = function (response) {
-  console.log('Response from updateOrderSuccess is: ', response)
   displayOrders()
 }
 
@@ -66,17 +65,17 @@ const displayOrder = function () {
 // the order passed in here needs to be the kind that's populated with full
 // items array of objects
 const updateCartDetails = function (order) {
-  console.log('order from updateCartDetails is: ', order)
+  // console.log('order from updateCartDetails is: ', order)
 
   const priceArray = order.items.map(item => item.price)
-  console.log('priceArray is ', priceArray)
+  // console.log('priceArray is ', priceArray)
   let totalCents = 0
   if (priceArray.length > 0) {
     totalCents = priceArray.reduce((total, num) => total + num, 0)
   }
   const totalDollars = (totalCents / 100).toFixed(2)
-  console.log('order.totalDollars from updateCartDetails is ', totalDollars)
-  console.log('order.totalCents from updateCartDetails is ', totalCents)
+  // console.log('order.totalDollars from updateCartDetails is ', totalDollars)
+  // console.log('order.totalCents from updateCartDetails is ', totalCents)
   // update order id and order total in all fields with those classes
   // (currently applies to both shopping cart modal and shopping cart test area)
   $('.order-id').html(order._id)

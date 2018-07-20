@@ -9,7 +9,7 @@ const getTilesSuccess = function (data) {
 }
 const getTilesError = function (error) {
   // $('#display').html('Tiles retrieval unsuccessful', error)
-  console.log('GET error is ', error)
+  // console.log('GET error is ', error)
 }
 
 // uses Bootstrap to add a color-coded, dismissable alert based on context
@@ -17,7 +17,7 @@ const getTilesError = function (error) {
 // if you pass in an optional fadeTime, the alert will hide itself after that
 // many milliseconds; otherwise user will need to dismiss
 const showAlert = function (context, msgBold, msgText, fadeTime) {
-  console.log('in ui.showAlert')
+  // console.log('in ui.showAlert')
   $('#alert-zone').html(`<div class="alert alert-${context} alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <strong><span="msg-bold">${msgBold}</span></strong> <span id="msgText">${msgText}</span>
