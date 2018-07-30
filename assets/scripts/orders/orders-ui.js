@@ -66,6 +66,12 @@ const displayOrder = function () {
 // items array of objects
 const updateCartDetails = function (order) {
   // console.log('order from updateCartDetails is: ', order)
+  // show or hide checkout button based on how many items are in cart
+  if (order.items.length === 0) {
+    $('#buttonCheckout').addClass('hidden')
+  } else {
+    $('#buttonCheckout').removeClass('hidden')
+  }
 
   const priceArray = order.items.map(item => item.price)
   // console.log('priceArray is ', priceArray)
