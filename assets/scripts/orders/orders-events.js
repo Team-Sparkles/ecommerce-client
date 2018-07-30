@@ -12,6 +12,9 @@ const addHandlers = function () {
   $('#cart-items').on('click', '.remove-item-button', processUpdateRequest)
   $('#cart-items-test').on('click', '.remove-item-button', processUpdateRequest)
   $('#past-order-list').on('click', '.show-past-order-button', onShowOrder)
+  $('#orders-close-button').on('click', () => {
+    $('#order-detail').addClass('hidden')
+  })
 }
 
 // display details of past order
