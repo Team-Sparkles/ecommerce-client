@@ -87,6 +87,7 @@ const updateCartDetails = function (order) {
   $('.order-id').html(order._id)
   $('.order-total').html(totalDollars)
   $('#buttonCheckout').attr('data-amount', totalCents)
+  $('#buttonCheckout').attr('data-order', order._id)
   // if there are any items, use Handlebars to loop through the items in the
   // order and write them to the #cart-items (and #cart-items-test) divs
   if (order.items.length > 0) {

@@ -79,6 +79,8 @@ const signOutSuccess = function (response) {
   $('#shopping-cart-button').addClass('hidden')
   $('#order-detail-detail').html('')
   $('#order-detail').addClass('hidden')
+  $('#buttonCheckout').attr('data-amount', 0)
+  $('#buttonCheckout').attr('data-order', 'null')
   ui.showAlert('success', 'Success!', 'We\'ve signed you out and deleted your cart.', 3000)
 }
 

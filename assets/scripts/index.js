@@ -23,19 +23,30 @@ $(() => {
     key: 'pk_test_ikhOV44uVLXegqqnKBGr490P',
     locale: 'auto'
   })
+
+  let cents = 0
+  let orderId = '0'
   const button = document.getElementById('buttonCheckout')
+
   button.addEventListener('click', function (ev) {
-    console.log("$(this).attr('data-amount') is ", $(this).attr('data-amount'))
-    const cents = parseInt($(this).attr('data-amount'))
-    console.log('cents in click handler is ', cents)
+    // console.log("$(this).attr('data-amount') is ", $(this).attr('data-amount'))
+    // console.log("$(this).attr('data-order') is ", $(this).attr('data-order'))
+    cents = parseInt($(this).attr('data-amount'))
+    orderId = $(this).attr('data-order')
+    // console.log('cents in click handler is ', cents)
     checkoutHandler.open({
       name: 'Nozama Aquatic Aquisitions',
-      description: 'Your Purchase',
+      description: `Order # ${$(this).attr('data-order')}`,
       amount: cents,
       token: handleToken
     })
   })
+
   function handleToken (token) {
+    console.log('token inside of handleToken is: ')
+    console.log(token)
+    token.card.metadata['orderId'] = orderId
+    token.card.metadata['amount'] = cents
     fetch(`${config.apiUrl}/charge`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -50,6 +61,8 @@ $(() => {
           $('#shoppingCartModal').modal('hide')
           ui.showAlert('success', 'Success!', 'Your payment has been processed', 2000)
           setTimeout(ordersEvents.onCreateOrder, 2000)
+          $('#buttonCheckout').attr('data-amount', 0)
+          $('#buttonCheckout').attr('data-order', 'null')
           // TODO: update record to show as completed
           // TODO: add the charge id to the record
         }
