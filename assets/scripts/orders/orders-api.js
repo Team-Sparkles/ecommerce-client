@@ -17,7 +17,6 @@ const createOrder = function (data) {
   })
 }
 
-// THIS FUNCTION NOT YET TESTED
 // INDEX - make a call to the server to show all orders
 const showOrders = function () {
   return $.ajax({

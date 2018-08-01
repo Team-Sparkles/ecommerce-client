@@ -12,15 +12,13 @@ const ordersEvents = require('./orders/orders-events')
 // require('./example')
 
 $(() => {
-  console.log('document loaded')
   authEvents.addHandlers()
   events.getTiles()
   ordersEvents.addHandlers()
 
-
   // STRIPE FUNCTIONALITY
 
-  console.log('StripeCheckout is ', StripeCheckout)
+  // console.log('StripeCheckout is ', StripeCheckout)
 
   // stripe stuff previously in index.html
   const checkoutHandler = StripeCheckout.configure({
@@ -56,8 +54,9 @@ $(() => {
   })
 
   function handleToken (token) {
-    console.log('token inside of handleToken is: ')
-    console.log(token)
+    // console.log('token inside of handleToken is: ')
+    // console.log(token)
+
     // before sending charge POST request, add orderId and amount as
     // metadata by adding properties to `token.card.metadata`
     // this will ensure it's sent to back end in an accessible spot
@@ -71,10 +70,11 @@ $(() => {
     })
       // when post of charge is successful, process the response
       .then(output => {
-        console.log('output is ', output)
-        console.log('output.id is ', output.id)
-        console.log('output.body is ', output.body)
-        console.log('output.status is ', output.status)
+        // console.log('output is ', output)
+        // console.log('output.id is ', output.id)
+        // console.log('output.body is ', output.body)
+        // console.log('output.status is ', output.status)
+
         // if response was success (200), hide the modal, show success alert,
         // reset amount and order ID attributes on button, and create a new
         // order with no items in it
