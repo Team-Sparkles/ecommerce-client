@@ -65,7 +65,7 @@ const displayOrder = function () {
 // the order passed in here needs to be the kind that's populated with full
 // items array of objects
 const updateCartDetails = function (order) {
-  // console.log('order from updateCartDetails is: ', order)
+  console.log('order from updateCartDetails is: ', order)
   // show or hide checkout button based on how many items are in cart
   if (order.items.length === 0) {
     $('#buttonCheckout').addClass('hidden')
