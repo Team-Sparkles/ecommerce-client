@@ -10,7 +10,6 @@ const ui = require('../ui')
 const addHandlers = function () {
   $('#marketplace').on('click', '.tile-cart-button', processUpdateRequest)
   $('#cart-items').on('click', '.remove-item-button', processUpdateRequest)
-  $('#cart-items-test').on('click', '.remove-item-button', processUpdateRequest)
   $('#past-order-list').on('click', '.show-past-order-button', onShowOrder)
   $('#orders-close-button').on('click', () => {
     $('#order-detail').addClass('hidden')
@@ -20,30 +19,33 @@ const addHandlers = function () {
 // display details of past order
 const onShowOrder = function () {
   const orderId = $(this).attr('data-id')
-  console.log('in onShowOrder and orderId is: ', orderId)
+  // console.log('in onShowOrder and orderId is: ', orderId)
   ordersApi.showOrder(orderId)
     .then(response => {
-      console.log('response.order.items from showOrder is: :', response.order.items)
-      console.log('typeof response.order from showOrder is: :', typeof response.order.items)
-      console.log('response.order.items[0] from showOrder is: :', response.order.items[0])
+      // console.log('response.order.total from showOrder is: ', response.order.total)
+      // console.log('response.order.items from showOrder is: :', response.order.items)
+      // console.log('typeof response.order from showOrder is: :', typeof response.order.items)
+      // console.log('response.order.items[0] from showOrder is: :', response.order.items[0])
+
+      // OPTION FOR CALCULATING TOTAL ON FRONT END
+      // calculate total price of cart
+      // const priceArray = response.order.items.map(item => item.price)
+      // console.log('priceArray is ', priceArray)
+      // let totalCents = 0
+      // if (priceArray.length > 0) {
+      //   totalCents = priceArray.reduce((total, num) => total + num, 0)
+      // }
+      // const totalDollars = (totalCents / 100).toFixed(2)
+      // console.log('order.totalDollars from updateCartDetails is ', totalDollars)
+      // console.log('order.totalCents from updateCartDetails is ', totalCents)
+
       const orderDetailHtml = orderDetailHandlebars({ items: response.order.items })
       $('#order-detail-detail').html('')
       $('#order-detail-detail').html(orderDetailHtml)
       $('#order-detail').removeClass('hidden')
       $('#past-order-id').html(`<h3>Details for Order # ${orderId}</h3>`)
-      // calculate total price of cart
-      const priceArray = response.order.items.map(item => item.price)
-      console.log('priceArray is ', priceArray)
-      let totalCents = 0
-      if (priceArray.length > 0) {
-        totalCents = priceArray.reduce((total, num) => total + num, 0)
-      }
-      const totalDollars = (totalCents / 100).toFixed(2)
-      console.log('order.totalDollars from updateCartDetails is ', totalDollars)
-      console.log('order.totalCents from updateCartDetails is ', totalCents)
       // update order id and order total in all fields with those classes
-      // (currently applies to both shopping cart modal and shopping cart test area)
-      $('#past-order-total').html(`<h5>Total Cost: ${totalDollars}</h5>`)
+      $('#past-order-total').html(`<h5>Total Cost: ${(response.order.total / 100).toFixed(2)}</h5>`)
     })
     .catch(console.error)
 }
