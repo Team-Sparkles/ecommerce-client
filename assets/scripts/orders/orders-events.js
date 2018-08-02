@@ -5,6 +5,7 @@ const ordersApi = require('./orders-api')
 const ordersUi = require('./orders-ui')
 const orderDetailHandlebars = require('../templates/past-cart-detail.handlebars')
 const ui = require('../ui')
+const store = require('../store')
 
 // event handlers for...
 const addHandlers = function () {
@@ -67,6 +68,7 @@ const onCreateOrder = function () {
 }
 
 const processUpdateRequest = function () {
+  if (store.user) {
   // find item ID from button clicked
   const itemId = $(this).attr('data-id')
   // console.log('itemId is: ', itemId)
@@ -118,6 +120,9 @@ const processUpdateRequest = function () {
       onUpdateOrder(orderId, data)
     })
     .catch(ordersUi.showOrderError)
+  } else {
+    ui.showAlert('danger', 'Hey!', 'Sign in if you want to buy this!', 3000)
+  }
 }
 
 const onUpdateOrder = function (orderId, data) {
