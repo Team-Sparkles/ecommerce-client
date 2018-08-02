@@ -52,7 +52,7 @@ const onShowOrder = function () {
 }
 
 const addAlert = function () {
-  ui.showAlert('success', 'Success!', 'Item is added to cart!', 3000)
+  ui.showAlert('success', 'Success!', 'Item has been added to your cart.', 1500)
 }
 
 const onCreateOrder = function () {
@@ -121,7 +121,7 @@ const processUpdateRequest = function () {
     })
     .catch(ordersUi.showOrderError)
   } else {
-    ui.showAlert('danger', 'Hey!', 'Sign in if you want to buy this!', 3000)
+    ui.showAlert('danger', 'Oops!', 'You\'ll need to sign in to buy this.', 2000)
   }
 }
 
