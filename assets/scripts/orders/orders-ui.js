@@ -3,10 +3,7 @@
 const ui = require('../ui')
 const cartItemsHandlebars = require('../templates/cart-items.handlebars')
 const orderListHandlebars = require('../templates/past-orders.handlebars')
-
 const ordersApi = require('./orders-api')
-
-// const store = require('../store')
 
 const showOrdersError = function (error) {
   // console.log('Error from showOrdersError is: ', error)
@@ -26,14 +23,6 @@ const showOrderError = function (error) {
 const updateOrderError = function (error) {
   // console.log('Error from updateOrderError is: ', error)
   ui.showAlert('danger', 'Warning!', 'Failed to connect to database', 3000)
-}
-
-const showOrdersSuccess = function (response) {
-  // console.log('Response from showOrdersError is: ', response)
-}
-
-const showOrderSuccess = function (response) {
-  // console.log('Response from showOrderSuccess is: ', response)
 }
 
 const updateOrderSuccess = function (response) {
@@ -57,10 +46,6 @@ const displayOrders = function () {
     })
     .catch(showOrdersError)
     // .catch(console.error)
-}
-
-const displayOrder = function () {
-
 }
 
 // the order passed in here needs to be the kind that's populated with full
@@ -91,14 +76,11 @@ const updateCartDetails = function (order) {
 
 module.exports = {
   showOrdersError: showOrdersError,
-  showOrdersSuccess: showOrdersSuccess,
   showOrderError: showOrderError,
-  showOrderSuccess: showOrderSuccess,
   updateOrderError: updateOrderError,
   updateOrderSuccess: updateOrderSuccess,
   createOrderError: createOrderError,
   createOrderSuccess: createOrderSuccess,
   updateCartDetails: updateCartDetails,
-  displayOrders: displayOrders,
-  displayOrder: displayOrder
+  displayOrders: displayOrders
 }
