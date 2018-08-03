@@ -12,7 +12,7 @@ const addHandlers = function () {
   $('#signup-form').on('submit', onSignUp)
   $('#signin-form').on('submit', onSignIn)
   $('#change-password-form').on('submit', onChangePassword)
-  $('.sign-out').on('click', onSignOut)
+  $('#sign-out-button').on('click', onSignOut)
   // clicking out of a modal
   $('button[data-dismiss]').on('click', authUi.clearAuthForms)
 }

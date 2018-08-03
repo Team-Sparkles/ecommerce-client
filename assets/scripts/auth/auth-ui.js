@@ -67,6 +67,7 @@ const signOutSuccess = function (response) {
   $('#cart-items').html('')
   delete store.user
   // change which auth options are available
+  $('#signOutModal').modal('hide')
   $('.sign-up').removeClass('hidden')
   $('.sign-in').removeClass('hidden')
   $('.sign-out').addClass('hidden')
