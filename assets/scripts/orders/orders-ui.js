@@ -10,22 +10,22 @@ const ordersApi = require('./orders-api')
 
 const showOrdersError = function (error) {
   // console.log('Error from showOrdersError is: ', error)
-  ui.showAlert('danger', 'Warning!', 'Failed to load orders from database', 3000)
+  ui.showAlert('danger', 'Warning!', 'Failed to connect to database', 3000)
 }
 
 const createOrderError = function (error) {
   // console.log('Error from createOrderError is: ', error)
-  ui.showAlert('danger', 'Warning!', 'Failed to create new order in database', 3000)
+  ui.showAlert('danger', 'Warning!', 'Failed to connect to database', 3000)
 }
 
 const showOrderError = function (error) {
   // console.log('Error from showOrderError is: ', error)
-  ui.showAlert('danger', 'Warning!', 'Failed to load order from database', 3000)
+  ui.showAlert('danger', 'Warning!', 'Failed to connect to database', 3000)
 }
 
 const updateOrderError = function (error) {
   // console.log('Error from updateOrderError is: ', error)
-  ui.showAlert('danger', 'Warning!', 'Failed to update order in database', 3000)
+  ui.showAlert('danger', 'Warning!', 'Failed to connect to database', 3000)
 }
 
 const showOrdersSuccess = function (response) {
