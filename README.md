@@ -105,7 +105,6 @@ Nozama.com's current implementation has room for improvement!
 - Nozama can have splines reticulated.
 
 
-
 ## PROCESS
 
 Development was arranged using the following structure:
@@ -124,3 +123,4 @@ This group project was built for the Web Development Immersive at General Assemb
 - [Matthew Ramos](https://github.com/MatthewJRamos)
 - [Sam Koch](https://github.com/SamPrimary)
 - [Teri Chadbourne](https://github.com/TeriChadbourne)
+
