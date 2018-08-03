@@ -3,37 +3,26 @@
 const ui = require('../ui')
 const cartItemsHandlebars = require('../templates/cart-items.handlebars')
 const orderListHandlebars = require('../templates/past-orders.handlebars')
-
 const ordersApi = require('./orders-api')
-
-// const store = require('../store')
 
 const showOrdersError = function (error) {
   // console.log('Error from showOrdersError is: ', error)
-  ui.showAlert('danger', 'Warning!', 'Failed to load orders from database', 3000)
+  ui.showAlert('danger', 'Warning!', 'Failed to connect to database', 3000)
 }
 
 const createOrderError = function (error) {
   // console.log('Error from createOrderError is: ', error)
-  ui.showAlert('danger', 'Warning!', 'Failed to create new order in database', 3000)
+  ui.showAlert('danger', 'Warning!', 'Failed to connect to database', 3000)
 }
 
 const showOrderError = function (error) {
   // console.log('Error from showOrderError is: ', error)
-  ui.showAlert('danger', 'Warning!', 'Failed to load order from database', 3000)
+  ui.showAlert('danger', 'Warning!', 'Failed to connect to database', 3000)
 }
 
 const updateOrderError = function (error) {
   // console.log('Error from updateOrderError is: ', error)
-  ui.showAlert('danger', 'Warning!', 'Failed to update order in database', 3000)
-}
-
-const showOrdersSuccess = function (response) {
-  // console.log('Response from showOrdersError is: ', response)
-}
-
-const showOrderSuccess = function (response) {
-  // console.log('Response from showOrderSuccess is: ', response)
+  ui.showAlert('danger', 'Warning!', 'Failed to connect to database', 3000)
 }
 
 const updateOrderSuccess = function (response) {
@@ -55,11 +44,8 @@ const displayOrders = function () {
       $('#past-order-list').html('')
       $('#past-order-list').html(orderListHtml)
     })
-    .catch(console.error)
-}
-
-const displayOrder = function () {
-
+    .catch(showOrdersError)
+    // .catch(console.error)
 }
 
 // the order passed in here needs to be the kind that's populated with full
@@ -90,14 +76,11 @@ const updateCartDetails = function (order) {
 
 module.exports = {
   showOrdersError: showOrdersError,
-  showOrdersSuccess: showOrdersSuccess,
   showOrderError: showOrderError,
-  showOrderSuccess: showOrderSuccess,
   updateOrderError: updateOrderError,
   updateOrderSuccess: updateOrderSuccess,
   createOrderError: createOrderError,
   createOrderSuccess: createOrderSuccess,
   updateCartDetails: updateCartDetails,
-  displayOrders: displayOrders,
-  displayOrder: displayOrder
+  displayOrders: displayOrders
 }

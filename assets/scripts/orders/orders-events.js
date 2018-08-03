@@ -48,7 +48,7 @@ const onShowOrder = function () {
       // update order id and order total in all fields with those classes
       $('#past-order-total').html(`<h5>Total Cost: ${(response.order.total / 100).toFixed(2)}</h5>`)
     })
-    .catch(console.error)
+    .catch(ordersUi.showOrderError)
 }
 
 const addAlert = function () {
@@ -134,7 +134,7 @@ const onUpdateOrder = function (orderId, data) {
     // to be printed to page
     .then(response => ordersUi.updateCartDetails(response.order))
     // log any errors along the way
-    .catch(error => console.error)
+    .catch(ordersUi.updateOrderError)
 }
 
 module.exports = {
