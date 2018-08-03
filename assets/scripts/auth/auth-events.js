@@ -15,6 +15,10 @@ const addHandlers = function () {
   $('#sign-out-button').on('click', onSignOut)
   // clicking out of a modal
   $('button[data-dismiss]').on('click', authUi.clearAuthForms)
+  $('.clear-auth-alert-modal').on('click', () => {
+    authUi.clearAuthMessage()
+    authUi.clearAuthForms()
+  })
 }
 
 // SIGN UP expected responses:
