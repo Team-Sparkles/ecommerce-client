@@ -35,6 +35,7 @@ $(() => {
 
   // when customer clicks 'checkout' button in shopping cart...
   button.addEventListener('click', function (ev) {
+    $('#checkout-alert-modal').html('<strong>Please wait while we process your order through Stripe.</strong>')
     // set `cents` to the value of the button's `data-amount` attribute
     // set `orderId` to the value of the button's `data-order` attribute
     // both of those have been updated each time the cart contents changed
@@ -80,6 +81,7 @@ $(() => {
         // order with no items in it
         if (output.status === 200) {
           $('#shoppingCartModal').modal('hide')
+          $('#checkout-alert-modal').html('')
           ui.showAlert('success', 'Success!', 'Your payment has been processed', 2000)
           $('#buttonCheckout').attr('data-amount', 0)
           $('#buttonCheckout').attr('data-order', 'null')
