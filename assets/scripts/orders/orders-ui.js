@@ -55,7 +55,8 @@ const displayOrders = function () {
       $('#past-order-list').html('')
       $('#past-order-list').html(orderListHtml)
     })
-    .catch(console.error)
+    .catch(showOrdersError)
+    // .catch(console.error)
 }
 
 const displayOrder = function () {

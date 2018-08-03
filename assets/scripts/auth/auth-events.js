@@ -103,7 +103,7 @@ const onSignOut = function (event) {
     .then(authApi.signOut)
     .then(authUi.signOutSuccess)
     .catch(authUi.signOutError)
-    .catch(console.error)
+    // .catch(console.error)
 }
 
 module.exports = {
