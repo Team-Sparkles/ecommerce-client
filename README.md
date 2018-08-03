@@ -1,3 +1,4 @@
+
 ## NOZAMA DOT COM - YOUR ONE-STOP E-COMMERCE DESTINATION
 
 Welcome to NOZAMA DOT COM, the future of e-commerce! Our site can be dynamically updated with a changing database of items for sale, and users can add as many of them as they want to their shopping cart, before checking out and processing a payment using Stripe.
@@ -102,7 +103,6 @@ Nozama.com's current implementation has room for improvement!
 - Nozama can feature a search bar that will allow users to search for items using tags or related words.
 - Nozama can have item sections or let users filter visibility by tags.
 - Nozama can have splines reticulated.
-
 
 
 ## PROCESS

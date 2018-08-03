@@ -28,7 +28,6 @@ const signInSuccess = function (response) {
   $('#signInModal').modal('hide')
   $('#signUpModal').modal('hide')
   ordersEvents.onCreateOrder()
-  console.log('about to call displayOrders')
   ordersUi.displayOrders()
 }
 
@@ -64,19 +63,21 @@ const changePasswordError = function (error) {
 // run on successful sign-outline (note no response expected from server)
 const signOutSuccess = function (response) {
   // update order id in all fields with class order-id
-  // (currently applies to both shopping cart modal and shopping cart test area)
   $('.order-id').html('Uh oh! No user is signed in!')
   $('#cart-items').html('')
-  // REMOVE THIS LINE WHEN DONE TESTING SHOPPPING CART; GOES TO MAIN PAGE, NOT MODAL
-  $('#cart-items-test').html('')
   delete store.user
   // change which auth options are available
+  $('#signOutModal').modal('hide')
   $('.sign-up').removeClass('hidden')
   $('.sign-in').removeClass('hidden')
   $('.sign-out').addClass('hidden')
   $('.change-password').addClass('hidden')
   $('#see-orders-button').addClass('hidden')
   $('#shopping-cart-button').addClass('hidden')
+  $('#order-detail-detail').html('')
+  $('#order-detail').addClass('hidden')
+  $('#buttonCheckout').attr('data-amount', 0)
+  $('#buttonCheckout').attr('data-order', 'null')
   ui.showAlert('success', 'Success!', 'We\'ve signed you out and deleted your cart.', 3000)
 }
 

@@ -28,7 +28,7 @@
         </div>
         <div id="header-user-options" class="header">
           <form class="form-inline justify-content-end">
-              <button id="sign-out-button" class="sign-out hidden btn btn-outline-success" type="button"><span>Sign Out</span></button>
+              <button id="sign-out-modal-button" class="sign-out hidden btn btn-outline-success" type="button" data-toggle="modal" data-target="#signOutModal"><span>Sign Out</span></button>
               <button id="change-password-button" class="change-password hidden btn btn-outline-success" data-toggle="modal" data-target="#changePasswordModal" type="button"><span>Change Password</span></button>
               <button id="sign-in-button" class="sign-in btn btn-outline-success" data-toggle="modal" data-target="#signInModal" type="button"><span>Sign In</span></button>
               <button id="sign-up-button" class="sign-up btn btn-outline-success" data-toggle="modal" data-target="#signUpModal" type="button"><span>Sign Up</span></button>
@@ -63,14 +63,6 @@
           </div>
 
         </div>
-
-        <!-- SHOPPING CART TEST MAIN -->
-        <!-- <div id="shopping-cart-test" data-id="noUserSignedIn">
-          <h3>Order # <span class="order-id">Uh oh! No user is signed in!</span></h3>
-          <div id="cart-items-test"> -->
-          <!-- TO BE FILLED IN BY HANDLEBARS -->
-          <!-- </div>
-        </div> -->
 
         <!-- FOOTER MAIN -->
         <div id="footer">
@@ -177,13 +169,14 @@
               <div id="order-detail-detail">
                 <!-- TO BE FILLED IN BY HANDLEBARS -->
               </div>
-              <button type="button" id="orders-close-button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-            </div>
+            </div> <!-- order-detail -->
+            <button type="button" id="orders-close-button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div> <!-- modal-body -->
+
           <p class="auth-alert-modal"></p>
           </div>
           <div class="modal-footer" id="see-orders-modal-footer">
-            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+
           </div>
         </div>
       </div>
@@ -206,18 +199,43 @@
               <!-- TO BE FILLED IN BY HANDLEBARS -->
               </div>
             </div>
+            <br>
             <div id="order-total-div">Order Total: $<span class="order-total">Uh oh! No order is loaded!</span></div>
-            <p class="auth-alert-modal"></p>
+            <br>
+            <p><strong>Just testing?</strong> Use card number 4242 4242 4242 4242 with any future expiration date and any 3-digit security code to create a fake payment in Stripe on the next screen.<p>
+            <p id="checkout-alert-modal"></p>
           </div>
           <div class="modal-footer">
             <div id="shop">
-              <button id="buttonCheckout" data-amount="0">Checkout</button>
+              <button id="buttonCheckout" class="hidden" data-amount="0" data-order="null">Checkout</button>
             </div>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- SIGN OUT Modal -->
+                  <div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="signOutModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="signOutModalLabel">Sign Out</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p>Signing out will clear your cart. Do you want to continue?</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                          <!-- <button id="sign-out-button" class="sign-out btn btn-outline-success" type="button"><span>Sign Out</span></button> -->
+                          <button id="sign-out-button" class="sign-out btn btn-outline-success">Sign Out</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
 
     </body>
 
