@@ -38,11 +38,14 @@ const createOrderSuccess = function (response) {
 const displayOrders = function () {
   ordersApi.showOrders()
     .then(response => {
-      // console.log('response.orders from showOrders is: :', response.orders)
-      // console.log('typeof response.orders from showOrders is: :', typeof response.orders)
-      const orderListHtml = orderListHandlebars({ orders: response.orders })
-      $('#past-order-list').html('')
-      $('#past-order-list').html(orderListHtml)
+      if (response.orders.length > 0) {
+        // console.log('response.orders from showOrders is: :', response.orders)
+        // console.log('typeof response.orders from showOrders is: :', typeof response.orders)
+        const orderListHtml = orderListHandlebars({ orders: response.orders })
+        $('#past-order-list').html(orderListHtml)
+      } else {
+        $('#past-order-list').html('You have no past orders to display.')
+      }
     })
     .catch(showOrdersError)
     // .catch(console.error)
